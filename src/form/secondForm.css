@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background: #1168DA;
+    background-image: url(../src/assets/backgroundvector.svg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 0% bottom 90%;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.FormContent {
+    background-image: url(../assets/backgroundform.svg);
+    background-repeat: no-repeat;
+    width: 1053px;
+    height: 1403px;
+    margin: auto;
+}
+
+.FormContent h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.FormContent h4 {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.FormContent h3, .FormContent h4 {
+    color: #FBFBFD;
+    margin: 0;
+    padding: 0;
+    top: 22px;
+    position: relative;
+}
+
+.FormContent form {
+    background: #E3EDFF;
+    border: 1px solid #99BBFF;
+    border-radius: 10px;
+    width: 1041px;
+    height: 1200px;
+    top: 164px;
+    position: relative;
+}
+
+label {
+    position: relative;
+    bottom: 86px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.FormContent form .NumbersFormPosition {
+    left: 48px;
+    top: 11px;
+    position: relative;
+}
+
+.FormContent form div {
+    width: 64px;
+    height: 883px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.FormContent form .NumbersForm:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border: 1px solid #3377FF;
+    transform: translate(-50%);
+}
+
+.FormContent form .NumbersForm .NumbersFormCircle {
+    width: 61px;
+    height: 61px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    text-align: center;
+    background: #FBFBFD;
+    border: 2px solid #99BBFF;
+}
+
+.FormContent form .NumbersForm .NumbersFormCircleBlue {
+    width: 61px;
+    height: 61px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    text-align: center;
+    background: #1168DA;
+    border: 2px solid #99BBFF;
+}
+
+.FormContent form .NumbersForm .BigNumber {
+    color: #3A3A3C;
+    font-weight: 400;
+    font-size: 33px;
+}
+
+.FormContent form .NumbersForm .SmallNumber {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.FormContent form .NumbersForm .BigNumberBlue {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 33px;
+}
+
+.FormContent form .NumbersForm .SmallNumberBlue {
+    font-weight: 400;
+    font-size: 16px;
+}
