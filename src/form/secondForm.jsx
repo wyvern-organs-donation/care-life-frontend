@@ -58,8 +58,12 @@ function SecondForm() {
                                     <option value="2">Pai</option>
                                 </select>
                             </div>
-                            <div className="userInput">
-                               <OTPBox/>
+                            <div className="UserInput">
+                                <OTPBox />
+                                <div className="CheckBox">
+                                    <input type="checkbox" name="scales"/>
+                                    <label>Marque essa opção se o doador não possuir RG ou seja estranjeiro</label>
+                                </div>
                             </div>
                             <div>
                                 <select>

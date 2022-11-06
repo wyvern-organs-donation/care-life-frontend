@@ -17,7 +17,7 @@ const OTPBox = () => {
                     {otp.map((data, index) => {
                         return (
                             <input
-                                className="otp-field"
+                                className="OtpField"
                                 type="text"
                                 name="otp"
                                 maxLength="1"
