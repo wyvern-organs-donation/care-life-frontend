@@ -47,7 +47,7 @@ body {
     position: relative;
 }
 
-label {
+.FormContent form .SubTitle {
     position: relative;
     bottom: 86px;
     font-weight: 500;
@@ -62,7 +62,29 @@ label {
     position: relative;
 }
 
-.FormContent form div {
+.FormContent form .NumbersForm {
+    width: 950px;
+    height: 883px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.FormContent form .NumbersFormContent:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border: 1px solid #3377FF;
+    transform: translate(-50%);
+}
+
+.FormContent form .NumbersForm .NumbersFormContent {
     width: 64px;
     height: 883px;
     position: relative;
@@ -70,17 +92,6 @@ label {
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
-}
-
-.FormContent form .NumbersForm:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border: 1px solid #3377FF;
-    transform: translate(-50%);
 }
 
 .FormContent form .NumbersForm .NumbersFormCircle {
@@ -129,4 +140,80 @@ label {
 .FormContent form .NumbersForm .SmallNumberBlue {
     font-weight: 400;
     font-size: 16px;
+}
+
+.FormContent form .NumbersForm .NumbersFormInformation {
+    width: 239px;
+    height: 856px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+}
+
+.FormContent form .NumbersForm .NumbersFormInformation span {
+    display: flex;
+    align-items: center;
+    height: 37px;
+}
+
+.FormContent form .NumbersForm .NumbersFormData {
+    width: 596px;
+    height: 856px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+}
+
+.FormContent form .NumbersForm .NumbersFormData .SelectStyle {
+    height: 37px;
+    display: flex;
+    align-items: center;
+    background: #FBFBFD;
+    border-radius: 6px;
+}
+
+.FormContent form .NumbersForm .NumbersFormData select {
+    width: 191px;
+    height: 36px;
+    border: 1px solid #99BBFF;
+    border-radius: 6px;
+    padding-left: 12px;
+    color: #8F90A6;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(../src/assets/seta.svg) no-repeat 85% 50%;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.userInput {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    margin: 2px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    background: #FBFBFD;
+    border: 1px solid #99BBFF;
+    border-radius: 3px;
+    
 }
