@@ -5,7 +5,7 @@ function SecondForm() {
     return (
         <div className="FormContent">
             <h3>Bem-vindo</h3>
-            <h4>Doe orgãos, doe vida</h4>
+            <h4>Doe órgãos, doe vida</h4>
             <form>
                 <label className="SubTitle">termo de autorização de doação de órgãos e tecidos</label>
                 <div className="NumbersFormPosition">
@@ -40,7 +40,7 @@ function SecondForm() {
                             </div>
                         </div>
                         <div className="NumbersFormInformation">
-                            <span>Respónsavel pela doação</span>
+                            <span>Responsável pela doação</span>
                             <span>RG</span>
                             <span>CPF</span>
                             <span>Sexo</span>
@@ -61,8 +61,30 @@ function SecondForm() {
                             <div className="UserInput">
                                 <OTPBox />
                                 <div className="CheckBox">
-                                    <input type="checkbox" name="scales"/>
-                                    <label>Marque essa opção se o doador não possuir RG ou seja estranjeiro</label>
+                                    <input type="checkbox" name="scales" />
+                                    <label>Marque essa opção se o doador não possuir RG ou seja estrangeiro</label>
+                                </div>
+                            </div>
+                            <div className="UserInput">
+                                <OTPBox />
+                                <div className="CheckBox">
+                                    <input type="checkbox" name="scales" />
+                                    <label>Marque essa opção se o doador não possuir RG ou seja estrangeiro</label>
+                                </div>
+                            </div>
+                            <div className="BirthDateContent">
+                                <div className="SelectStyle">
+                                    <select>
+                                        <option value="0">Escolha uma opção</option>
+                                        <option value="1">Mãe</option>
+                                        <option value="2">Pai</option>
+                                    </select>
+                                </div>
+                                <div className="BirthDate">
+                                    <label>Data de Nascimento</label>
+                                    <div className="SelectStyle">
+                                    <input className="Datetime" type="datetime-local" />
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -76,19 +98,7 @@ function SecondForm() {
                                 </select>
                             </div>
                             <div>
-                                <select>
-                                    <option value="">Escolha uma opção</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select>
-                                    <option value="">Escolha uma opçãoffkfkfffkf</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select>
-                                    <option value="">Escolha uma opção</option>
-                                </select>
+                                <OTPBox />
                             </div>
                             <div>
                                 <select>
