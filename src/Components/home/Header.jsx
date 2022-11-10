@@ -4,11 +4,29 @@ import img from './imagemMedico.png'
 
 export function Header() {
     return(
-        <header>            
-                <h1>Doe órgãos  a vida precisa continuar</h1>
-                <p>Milhares de brasileiros esperam por um transplante. 
-                    Ser um doador é um ato de Amor e Solidariedade.</p>
-                    <img src={img} /> 
+        <header>      
+                      
+          <h2 id='logo'></h2>
+          <div id='container'>
+            <div id='text'>
+              <div id='text2'>
+                <p>Doe órgãos, a</p>
+                <p>vida precisa</p>
+                <p>continuar</p>
+              </div>
+              
+              <div id='message'>
+                <p>Milhares de brasileiros esperam por um transplante.</p>
+                <p>Ser um doador é um ato de Amor e Solidariedade.</p>
+              </div>
+              <button id='btSingin'>Seja um doador</button>
+            </div>
+            <div>
+              <img  id='imgMed' src={img} /> 
+            </div>
+          </div>
+                
+          
         </header>
   );
 }
