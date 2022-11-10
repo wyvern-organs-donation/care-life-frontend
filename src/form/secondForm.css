@@ -64,7 +64,7 @@ body {
 
 .FormContent form .NumbersForm {
     width: 950px;
-    height: 877px;
+    height: 864px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -181,7 +181,7 @@ body {
 }
 
 .FormContent form .NumbersForm .NumbersFormData .SelectStyle {
-    height: 37px;
+    height: 41px;
     display: flex;
     align-items: center;
     background: #FBFBFD;
@@ -190,7 +190,7 @@ body {
 
 .FormContent form .NumbersForm .NumbersFormData select {
     width: 191px;
-    height: 36px;
+    height: 41px;
     border: 1px solid #99BBFF;
     border-radius: 6px;
     padding-left: 12px;
@@ -204,6 +204,7 @@ body {
     cursor: pointer;
 }
 
+/* otp input */
 
 .UserInput {
     display: flex;
@@ -249,6 +250,8 @@ body {
     margin: 0;
 }
 
+/* -- */
+
 .BirthDateContent {
     width: 596px;
     height: 45px;
@@ -277,4 +280,91 @@ body {
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
+}
+
+/* Address Input */
+.AdressContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 561px;
+    height: 45px;
+}
+
+.AddressInput {
+    width: 335px;
+    height: 41px;
+    background: #FBFBFD;
+    border: 1px solid #99BBFF;
+    border-radius: 6px;
+}
+
+/* judicial confirmation */
+
+.JudicialInput .CheckBox {
+    display: flex;
+    margin: 0;
+    text-align: left;
+    align-items: center;
+}
+
+.JudicialInput .CheckBox ul {
+    padding-left: 30px;
+}
+.JudicialInput .CheckBox ul li {
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    line-height: 15px;
+}
+
+.JudicialInput .CheckBox ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    line-height: 15px;
+}
+
+.JudicialInput .CheckBox input {
+    width: 24px;
+    height: 24px;
+    background: #FBFBFD;
+    border: 1px solid #99BBFF;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.EmailInput {
+    width: 405px;
+    height: 41px;
+    background: #FBFBFD;
+    border: 1px solid #99BBFF;
+    border-radius: 6px;
+}
+
+.ConsentAuthorization {
+   display: flex;
+   align-items: center;
+   text-align: left;
+   
+}
+
+.ConsentAuthorization ul {
+    padding-left: 12px;
+}
+
+.ConsentAuthorization ul li {
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    line-height: 15px;
+}
+
+.ConsentAuthorization ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    line-height: 15px;
 }

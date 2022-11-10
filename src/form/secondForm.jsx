@@ -61,15 +61,15 @@ function SecondForm() {
                             <div className="UserInput">
                                 <OTPBox />
                                 <div className="CheckBox">
-                                    <input type="checkbox" name="scales" />
+                                    <input type="checkbox" className="CheckBoxStyle" name="rg" />
                                     <label>Marque essa opção se o doador não possuir RG ou seja estrangeiro</label>
                                 </div>
                             </div>
                             <div className="UserInput">
                                 <OTPBox />
                                 <div className="CheckBox">
-                                    <input type="checkbox" name="scales" />
-                                    <label>Marque essa opção se o doador não possuir RG ou seja estrangeiro</label>
+                                    <input type="checkbox" name="cpf" />
+                                    <label>Marque essa opção se o doador não possuir CPF ou seja estrangeiro</label>
                                 </div>
                             </div>
                             <div className="BirthDateContent">
@@ -83,32 +83,44 @@ function SecondForm() {
                                 <div className="BirthDate">
                                     <label>Data de Nascimento</label>
                                     <div className="SelectStyle">
-                                    <input className="Datetime" type="datetime-local" />
+                                        <input className="Datetime" type="datetime-local" />
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <select>
-                                    <option value="">Escolha uma opção</option>
-                                </select>
+                            <div className="AdressContent">
+                                <input type="text" name="name" className="AddressInput" />
+                                <div className="SelectStyle">
+                                    <select>
+                                        <option value="0">Cidade</option>
+                                        <option value="1">Fortaleza</option>
+                                        <option value="2">Fortaleza</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div>
-                                <select>
-                                    <option value="">Escolha uma opçãoffkfkfffkf</option>
-                                </select>
+                            <div className="JudicialInput">
+                                <div className="CheckBox">
+                                    <input type="checkbox" className="CheckBoxStyle" name="rg" />
+                                    <ul>
+                                        <li>
+                                            Autorizo conforme a <a href="http://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10211.htm">LEI n° 10.211</a> de Março de 2001<br />
+                                            e <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9175.htm">Decreto 9175 de Outubro 2017</a>.
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div>
+                            <div className="Telephone">
                                 <OTPBox />
                             </div>
-                            <div>
-                                <select>
-                                    <option value="">Escolha uma opçãoffkfkfffkf</option>
-                                </select>
+                            <div className="Email">
+                                <input type="text" name="name" className="EmailInput" />
                             </div>
-                            <div>
-                                <select>
-                                    <option value="">Escolha uma opçãoffkfkfffkf</option>
-                                </select>
+                            <div className="ConsentAuthorization">
+                                <ul>
+                                    <li>
+                                        Autorizo consetida por familares de ate 2° grau conforme<br />
+                                        o <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9175.htm">Decreto N° 9175 de Outubro 2017</a>.
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
