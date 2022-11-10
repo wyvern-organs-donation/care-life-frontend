@@ -1,0 +1,221 @@
+:root {
+  --color-label: #535353;
+  --color-h2: #19355c;
+  --color-border-input: #d1d1d1;
+  --color-link1: #4d7cfe;
+  --color-p: #778ca2;
+  --color-btn-off: #4d7cfe66;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1440px;
+  height: 1024px;
+  max-width: 1440px;
+  max-height: 1024px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-image: url("../../assets/Rectangle 1.png");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.vector1 {
+  width: 925.5px;
+  height: 938px;
+  position: absolute;
+  left: 667px;
+  top: -73px;
+  z-index: 0;
+}
+
+.vector2 {
+  width: 561px;
+  height: 670px;
+  position: absolute;
+  left: -7px;
+  top: 354px;
+  z-index: 0;
+}
+
+.Main {
+  display: flex;
+  width: 100%;
+  margin-top: 136px;
+  justify-content: space-between;
+}
+
+.Doctor-Image {
+  position: absolute;
+  width: 1336px;
+  height: 890px;
+  bottom: 0;
+}
+
+
+form {
+  width: 532px;
+  height: 609px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  z-index: 1;
+  margin-top: 120px;
+}
+
+form h2 {
+  color: var(--color-h2);
+  font-weight: 700;
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  width: 380px;
+  border-bottom: 1px solid var(--color-h2);
+  position: relative;
+  padding-top: 26px;
+  padding-bottom: 16px;
+  margin-bottom: 40px;
+}
+
+form label {
+  margin-bottom: 4px;
+  text-align: start;
+  color: var(--color-label);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  width: 420px;
+}
+
+.inputs input {
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-input);
+  border-radius: 4px;
+  outline: none;
+  padding-left: 8px;
+}
+
+.inputs input::placeholder {
+  color: var(--color-border-input);
+}
+
+.password {
+  margin-top: 27px;
+  position: relative;
+}
+
+.inputs img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+}
+
+.inputs img:hover {
+  cursor: pointer;
+}
+
+.forgot-password {
+  width: 420px;
+  margin-top: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.forgot-password a {
+  font-weight: 700;
+  color: var(--color-link1);
+}
+
+.forgot-password p {
+  font-weight: 500;
+  color: var(--color-p);
+}
+
+.remember-password {
+  display: flex;
+  align-items: center;
+}
+
+#checkbox {
+  width: 24px;
+  height: 24px;
+  margin-left: 17px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  width: 310px;
+  height: 50px;
+  margin: 32px 0;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-btn-off);
+  position: relative;
+  cursor: pointer;
+  animation: all ease-in-out;
+}
+
+button:hover{
+  transition-duration: .2s;
+  background-color: #1168DA;
+}
+
+.not-registered {
+  width: 420px;
+  display: flex;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 48px;
+  border-top: 1px solid #98a9bc;
+}
+
+.not-registered p {
+  font-weight: 500;
+  color: #4d7cfe;
+}
+
+.not-registered a {
+  font-weight: 900;
+  color: #1168da;
+}
