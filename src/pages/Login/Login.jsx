@@ -4,7 +4,7 @@ import "./login.css";
 
 function Login() {
   return (
-    <div className="container">
+    <div>
       <Header />
       <img src="src/assets/Vector 1.svg" alt=""  className="vector1"/>
       <img src="src/assets/Vector 2.svg" alt="" className="vector2"/>
