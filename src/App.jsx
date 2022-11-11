@@ -1,4 +1,4 @@
-import SecondForm from './form/secondForm'
+import SecondForm from './form/SecondForm'
 import './App.css'
 
 function App() {

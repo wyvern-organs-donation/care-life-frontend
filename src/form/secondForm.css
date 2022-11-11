@@ -2,7 +2,7 @@
 
 body {
     background: #1168DA;
-    background-image: url(../src/assets/backgroundvector.svg);
+    background-image: url(../src/assets/BackgroundVector.svg);
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,7 +12,7 @@ body {
 }
 
 .FormContent {
-    background-image: url(../assets/backgroundform.svg);
+    background-image: url(../assets/BackgroundForm.svg);
     background-repeat: no-repeat;
     width: 1053px;
     height: 1403px;
@@ -64,7 +64,7 @@ body {
 
 .FormContent form .NumbersForm {
     width: 950px;
-    height: 864px;
+    height: 877px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -73,6 +73,7 @@ body {
     z-index: 2;
 }
 
+/* list of numbers */
 .FormContent form .NumbersFormContent:after {
     content: "";
     position: absolute;
@@ -86,7 +87,7 @@ body {
 
 .FormContent form .NumbersForm .NumbersFormContent {
     width: 64px;
-    height: 883px;
+    height: 877px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -142,6 +143,8 @@ body {
     font-size: 16px;
 }
 
+/* -- */
+
 .FormContent form .NumbersForm .NumbersFormInformation {
     width: 239px;
     height: 856px;
@@ -181,7 +184,7 @@ body {
 }
 
 .FormContent form .NumbersForm .NumbersFormData .SelectStyle {
-    height: 41px;
+    height: 45px;
     display: flex;
     align-items: center;
     background: #FBFBFD;
@@ -190,7 +193,7 @@ body {
 
 .FormContent form .NumbersForm .NumbersFormData select {
     width: 191px;
-    height: 41px;
+    height: 45px;
     border: 1px solid #99BBFF;
     border-radius: 6px;
     padding-left: 12px;
@@ -198,7 +201,7 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: url(../src/assets/seta.svg) no-repeat 85% 50%;
+    background: url(../src/assets/ArrowIcon.svg) no-repeat 85% 50%;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
@@ -241,7 +244,7 @@ body {
     line-height: 15px;
 }
 
-.UserInput .CheckBox input {
+.CheckBoxStyle {
     width: 24px;
     height: 24px;
     background: #FBFBFD;
@@ -249,6 +252,7 @@ body {
     border-radius: 4px;
     margin: 0;
 }
+
 
 /* -- */
 
@@ -272,7 +276,7 @@ body {
 
 .Datetime {
     width: 191px;
-    height: 36px;
+    height: 45px;
     border: 1px solid #99BBFF;
     border-radius: 6px;
     padding-left: 12px;
@@ -311,6 +315,7 @@ body {
 .JudicialInput .CheckBox ul {
     padding-left: 30px;
 }
+
 .JudicialInput .CheckBox ul li {
     font-weight: 500;
     font-size: 14px;
@@ -326,14 +331,6 @@ body {
     line-height: 15px;
 }
 
-.JudicialInput .CheckBox input {
-    width: 24px;
-    height: 24px;
-    background: #FBFBFD;
-    border: 1px solid #99BBFF;
-    border-radius: 4px;
-    margin: 0;
-}
 
 .EmailInput {
     width: 405px;
@@ -344,14 +341,14 @@ body {
 }
 
 .ConsentAuthorization {
-   display: flex;
-   align-items: center;
-   text-align: left;
-   
+    display: flex;
+    align-items: center;
+    text-align: left;
+
 }
 
 .ConsentAuthorization ul {
-    padding-left: 12px;
+    padding-left: 30px;
 }
 
 .ConsentAuthorization ul li {
@@ -367,4 +364,12 @@ body {
     font-size: 14px;
     color: #000000;
     line-height: 15px;
+}
+
+hr {
+    width: 983px;
+    height: 0px;
+    border: 1px solid #3377FF;
+    position: relative;
+    top: 142px;
 }

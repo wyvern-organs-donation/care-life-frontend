@@ -1,4 +1,5 @@
 import OTPBox from './OtpInput'
+import DatePick from './DatePicker'
 import './secondForm.css'
 
 function SecondForm() {
@@ -68,7 +69,7 @@ function SecondForm() {
                             <div className="UserInput">
                                 <OTPBox />
                                 <div className="CheckBox">
-                                    <input type="checkbox" name="cpf" />
+                                    <input type="checkbox" className="CheckBoxStyle" name="cpf" />
                                     <label>Marque essa opção se o doador não possuir CPF ou seja estrangeiro</label>
                                 </div>
                             </div>
@@ -82,9 +83,7 @@ function SecondForm() {
                                 </div>
                                 <div className="BirthDate">
                                     <label>Data de Nascimento</label>
-                                    <div className="SelectStyle">
-                                        <input className="Datetime" type="datetime-local" />
-                                    </div>
+                                    <DatePick/>
                                 </div>
                             </div>
                             <div className="AdressContent">
@@ -99,7 +98,7 @@ function SecondForm() {
                             </div>
                             <div className="JudicialInput">
                                 <div className="CheckBox">
-                                    <input type="checkbox" className="CheckBoxStyle" name="rg" />
+                                    <input type="checkbox" className="CheckBoxStyle" name="judicial" />
                                     <ul>
                                         <li>
                                             Autorizo conforme a <a href="http://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10211.htm">LEI n° 10.211</a> de Março de 2001<br />
@@ -115,18 +114,18 @@ function SecondForm() {
                                 <input type="text" name="name" className="EmailInput" />
                             </div>
                             <div className="ConsentAuthorization">
+                                <input type="checkbox" className="CheckBoxStyle" name="authorization" />
                                 <ul>
                                     <li>
-                                        Autorizo consetida por familares de ate 2° grau conforme<br />
+                                        Autorização consetida por familares de até 2° grau conforme<br />
                                         o <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9175.htm">Decreto N° 9175 de Outubro 2017</a>.
                                     </li>
                                 </ul>
-                            </div>
+                            </div>                         
                         </div>
-
-
-                    </div>
+                    </div>                   
                 </div>
+                <hr/>           
             </form>
         </div>
     )
