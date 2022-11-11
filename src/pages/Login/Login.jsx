@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "../../components/Header/Header";
 import "./login.css";
 
 function Login() {
   return (
     <div>
-      <Header />
-      <img src="src/assets/Vector 1.svg" alt=""  className="vector1"/>
-      <img src="src/assets/Vector 2.svg" alt="" className="vector2"/>
+      <div className="vectors">
+        <img src="src/assets/Vector 1.svg" alt="" className="vector1" />
+        <img src="src/assets/Vector 2.svg" alt="" className="vector2" />
+      </div>
       <div className="Main">
         <picture>
           <img

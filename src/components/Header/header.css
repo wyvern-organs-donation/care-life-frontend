@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding-left: 135px;
+  padding-right: 135px;
   padding-top: 66px;
   z-index: 1;
 }
@@ -27,6 +28,6 @@
 
 .Menu-Links ul li a:hover,
 .Menu-Links ul li a:focus {
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   color: #01cfc9;
 }
