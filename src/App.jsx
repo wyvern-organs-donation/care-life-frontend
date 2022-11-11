@@ -6,12 +6,16 @@ import './App.css'
 function App() {
 
   return (
+    <>
+    Colocar aqui os components da homePage
     <BrowserRouter>
+    
     <Routes>
       <Route path='/admim'element={<Instituicao />} />
       <Route path='/admim-user'element={<InstituicaoUser/>} />
     </Routes>
     </BrowserRouter>
+    </>
     
   )
 }
