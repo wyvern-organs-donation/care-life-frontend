@@ -2,6 +2,7 @@
     background-color: white;
     border: 2px solid #19355C;
     box-shadow: 2px 2px 2px 2px #00978F;
+    text-align: start;
     border-radius: 5px;
     color: #00978F;
     margin-top: 2rem;
@@ -12,11 +13,12 @@
     color: #19355C;
 }
 
-.section img {
+/*.section img {
     position: absolute;
     align-items: flex-end;
+    height: 100%;
     left: 30rem;
-    bottom: 15rem;
+    bottom: 10rem;
     width: 15rem;
 	
 }

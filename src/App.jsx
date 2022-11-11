@@ -1,10 +1,17 @@
-import Admin from './componets/admin/admin'
+import Instituicao from './pages/admin/instituicao/instituicao'
+import InstituicaoUser from './pages/admin/instituicao_user/page'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css'
 
 function App() {
-  
 
   return (
-      <Admin />
+    <BrowserRouter>
+    <Routes>
+      <Route path='/admim'element={<Instituicao />} />
+      <Route path='/admim-user'element={<InstituicaoUser/>} />
+    </Routes>
+    </BrowserRouter>
     
   )
 }
