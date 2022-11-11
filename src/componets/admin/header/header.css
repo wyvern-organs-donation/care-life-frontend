@@ -1,0 +1,23 @@
+.Header {
+    display: flex;
+    position: initial;
+
+}
+
+.Header h3 {
+    color: #19355C;
+    margin-left: 2rem;
+}
+
+.Header img {
+    margin-top: 1rem;
+    margin-left: 300px;
+    margin-right: 30px;
+}
+
+.Header button {
+    background-color: #1168DA;
+    margin-right: 50px;
+    margin-top: 1rem; 
+    height: 3rem;
+}

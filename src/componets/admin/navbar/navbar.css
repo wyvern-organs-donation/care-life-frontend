@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    overflow: auto;
+}
+
+.navbar a {
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .rowC {
+    display: flex;
+    flex-direction: row;
+}

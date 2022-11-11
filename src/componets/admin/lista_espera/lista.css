@@ -1,0 +1,20 @@
+.lista {
+    background-color: white;
+    border: 2px solid #19355C;
+    box-shadow: 2px 2px 2px 2px #00978F;
+    border-radius: 5px;
+    color: #00978F;
+    max-width: 10rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.lista h3 {
+    color: #19355C;
+
+}
+
+.lista a {
+    color: #00978F
+    ;
+}
