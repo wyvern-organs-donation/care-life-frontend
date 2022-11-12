@@ -1,6 +1,15 @@
 .buscar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.buscar h3 {
+    color: #00978F;
+    align-items: flex-start;
+}
+
+.buscar input {
+    background-color: white;
     border: none;
-    border-radius: none;
-    box-shadow: none;
-    background-color: transparent;
 }

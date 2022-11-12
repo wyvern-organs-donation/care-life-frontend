@@ -1,15 +1,15 @@
-.navbari {
+.navbar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color:#FEFEFE;
+    background-color: #1168DA;
     overflow: auto;
 }
 
-.navbari a {
+.navbar a {
     text-align: center;
     padding: 12px;
-    color: white;
+    color:#1168DA;
     text-decoration: none;
     display: inline-block;
   }

@@ -4,7 +4,7 @@ import './navbar.css'
 function Navbar() {
   return (
     <div className='rowC'>
-      <div className="navbari">
+      <div className="navbar">
         <a href="#"><img src="/src/assets/admin/gg_menu-cake.svg" alt="menu" /></a>
         <a href="#"><img src="/src/assets/admin/ci_dashboard.svg" alt="dashboard" /></a>
         <a href="#"><img src="/src/assets/admin/entypo_bar-graph.svg" alt="grafico" /></a>
