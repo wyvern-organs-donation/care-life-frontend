@@ -3,6 +3,7 @@
 body {
     background: #1168DA;
     background-image: url(../src/assets/BackgroundVector.svg);
+    width: auto;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
