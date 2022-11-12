@@ -3,20 +3,21 @@
 }
 
 header{
+  padding-bottom: 20%;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #1168DA;
+  background-image: url('../src/Components/home/imagemMedico.png');
+  background-size: 100%;
 }
 
-
 #container{
+  margin-left: 10%;
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
 #message{
-  margin-top: 22%;
+  margin-top: 12%;
   font-size: 1.3em;
 }
 
@@ -29,11 +30,6 @@ header{
   text-align: left;
 }
 
-#imgMed{
-  width: 100%;
-  height: 100%;
-}
-
 #btSingin{
   color: white;
   margin-top: 10%;
@@ -43,5 +39,6 @@ header{
   height: 50px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 

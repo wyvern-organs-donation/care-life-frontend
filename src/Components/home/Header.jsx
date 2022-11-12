@@ -1,12 +1,9 @@
-import img from './imagemMedico.png'
-
-
+import { Navbar } from "./Navbar";
 
 export function Header() {
     return(
-        <header>      
-                      
-          <h2 id='logo'></h2>
+        <header>
+          <Navbar />
           <div id='container'>
             <div id='text'>
               <div id='text2'>
@@ -21,12 +18,7 @@ export function Header() {
               </div>
               <button id='btSingin'>Seja um doador</button>
             </div>
-            <div>
-              <img  id='imgMed' src={img} /> 
-            </div>
           </div>
-                
-          
         </header>
   );
 }
