@@ -111,7 +111,7 @@ function SecondForm() {
                                 <OTPBox />
                             </div>
                             <div className="Email">
-                                <input type="text" name="name" className="EmailInput" />
+                                <input type="email" name="name" className="EmailInput" />
                             </div>
                             <div className="ConsentAuthorization">
                                 <input type="checkbox" className="CheckBoxStyle" name="authorization" />
