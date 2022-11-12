@@ -1,10 +1,12 @@
 import React from "react";
-import "./header.css";
+import "./index.css";
 
 function Header() {
   return (
     <div className="Header">
-      <a href="#"><img src="/src/assets/Care Life.svg" alt="Logo da CareLife" /></a>
+      <a href="#">
+        <img src="/src/assets/Care Life.svg" alt="Logo da CareLife" />
+      </a>
       <nav className="Menu-Links">
         <ul>
           <li>

@@ -10,91 +10,96 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url("../../assets/Rectangle 1.png");
 }
 
-.vector1 {
-  width: 925.5px;
-  height: 938px;
-  position: absolute;
-  left: 667px;
-  top: -73px;
-  z-index: 0;
+#root {
+  width: 100%;
+  height: 100%;
 }
 
-.vector2 {
-  width: 561px;
-  height: 670px;
-  position: absolute;
-  left: -7px;
-  top: 354px;
-  z-index: 0;
+.container {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/Background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .Main {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: center;
 }
 
-.Doctor-Image {
-  position: absolute;
-  width: 1336px;
-  height: 890px;
-  bottom: 0;
+picture {
+  display: flex;
+  align-items: end;
+  height: 100%;
+}
+
+picture img {
+  width: 100%;
 }
 
 form {
-  position: absolute;
-  top: 287px;
-  left: 772px;
-  width: 532px;
-  height: 609px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 33.25rem;
+  max-height: 38.0625rem;
   text-align: center;
   background-color: #ffffff;
-  border-radius: 16px;
-  z-index: 1;
+  border-radius: 1rem;
+  margin-right: 8.5rem;
 }
 
 form h2 {
+  width: 100%;
+  margin-top: 1.625rem;
+  max-width: 23.75rem;
   color: var(--color-h2);
   font-weight: 700;
   font-size: 32px;
   font-family: "Poppins", sans-serif;
-  width: 380px;
   border-bottom: 1px solid var(--color-h2);
   position: relative;
-  padding-top: 26px;
-  padding-bottom: 16px;
-  margin-bottom: 40px;
 }
 
 form label {
-  margin-bottom: 4px;
   text-align: start;
   color: var(--color-label);
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2.625rem;
   font-weight: 400;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
-  width: 420px;
+}
+
+.email,
+.password {
+  display: flex;
+  flex-direction: column;
 }
 
 .inputs input {
-  height: 40px;
   background-color: #ffffff;
   border: 1px solid var(--color-border-input);
   border-radius: 4px;
   outline: none;
-  padding-left: 8px;
+  height: 2.5rem;
+  padding-left: 5px;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
 }
 
 .inputs input::placeholder {
@@ -102,16 +107,15 @@ form label {
 }
 
 .password {
-  margin-top: 27px;
   position: relative;
 }
 
-.inputs img {
+.password img {
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 10px;
-  bottom: 12px;
+  right: 70px;
+  bottom: 10px;
 }
 
 .inputs img:hover {
@@ -119,11 +123,12 @@ form label {
 }
 
 .forgot-password {
-  width: 420px;
-  margin-top: 44px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 33.25rem;
+  padding: 2rem 3.5rem 1.5rem 3.5rem;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
 }
@@ -153,11 +158,12 @@ form label {
 }
 
 button {
-  width: 310px;
-  height: 50px;
-  margin: 32px 0;
   font-weight: 700;
   font-size: 14px;
+  width: 22.5rem;
+  max-width: 22.2rem;
+  height: 3.125rem;
+  margin-bottom: 1.5rem;
   font-family: "Poppins", sans-serif;
   color: white;
   border: none;
@@ -174,7 +180,6 @@ button:hover {
 }
 
 .not-registered {
-  width: 420px;
   display: flex;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
@@ -182,7 +187,8 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding-top: 48px;
+  padding-top: 2rem;
+  padding-bottom: 2.375rem;
   border-top: 1px solid #98a9bc;
 }
 
