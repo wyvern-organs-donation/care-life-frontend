@@ -1,59 +1,62 @@
 import React from "react";
+import Header from "../../components/header";
+import { Link } from "react-router-dom";
 import "./index.css";
 
-function Login() {
+export default function Login() {
   return (
-    <div className="Main">
-      <picture>
-        <img
-          src="src/assets/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
-          alt=""
-        />
-      </picture>
-      <form>
-        <h2>Login</h2>
-        <div className="inputs">
-          <div className="email">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email-login"
-              placeholder="Digite seu email"
-            />
+    <React.Fragment>
+      <Header />
+      <div className="Main">
+        <picture>
+          <img
+            src="src/assets/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
+            alt=""
+          />
+        </picture>
+        <form className="formName">
+          <h2>Login</h2>
+          <div className="inputs">
+            <div className="email">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email-login"
+                placeholder="Digite seu email"
+              />
+            </div>
+            <div className="password">
+              <label htmlFor="passwor-login">Senha</label>
+              <input
+                type="password"
+                name="password-login"
+                id="password-login"
+                placeholder="Digite sua senha"
+              />
+              <img src="src/assets/eye off.svg" alt="" />
+            </div>
           </div>
-          <div className="password">
-            <label htmlFor="passwor-login">Senha</label>
-            <input
-              type="password"
-              name="password-login"
-              id="password-login"
-              placeholder="Digite sua senha"
-            />
-            <img src="src/assets/eye off.svg" alt="" />
+          <div className="forgot-password">
+            <a href="#">
+              <strong>Esqueceu a senha?</strong>
+            </a>
+            <div className="remember-password">
+              <p>
+                <strong>Lembrar senha</strong>
+              </p>
+              <input type="checkbox" name="checkbox" id="checkbox" />
+            </div>
           </div>
-        </div>
-        <div className="forgot-password">
-          <a href="#">
-            <strong>Esqueceu a senha?</strong>
-          </a>
-          <div className="remember-password">
-            <p>
-              <strong>Lembrar senha</strong>
-            </p>
-            <input type="checkbox" name="checkbox" id="checkbox" />
+          <button type="submit">ENTRAR</button>
+          <div className="not-registered">
+            <p>Ainda não tem conta?</p>
+            <Link to="/register">
+              <strong>Cadastre-se</strong>
+            </Link>
           </div>
-        </div>
-        <button type="submit">ENTRAR</button>
-        <div className="not-registered">
-          <p>Ainda não tem conta?</p>
-          <a href="#">
-            <strong>Cadastre-se</strong>
-          </a>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </React.Fragment>
   );
 }
-
-export default Login;

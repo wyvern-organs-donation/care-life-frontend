@@ -1,33 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 
-function Header() {
+export default function Header() {
   return (
     <div className="Header">
-      <a href="#">
+      <Link to="/home">
         <img src="/src/assets/Care Life.svg" alt="Logo da CareLife" />
-      </a>
+      </Link>
       <nav className="Menu-Links">
         <ul>
           <li>
-            <a href="#">Início</a>
+            <Link to="/">Início</Link>
           </li>
           <li>
-            <a href="#">Entrar</a>
+            <Link to="/login">Entrar</Link>
           </li>
           <li>
-            <a href="#">Cadastrar</a>
+            <Link to="/register">Cadastrar</Link>
           </li>
           <li>
-            <a href="#">Porque Doar</a>
+            <Link to="/porque-doar">Porque Doar</Link>
           </li>
           <li>
-            <a href="#">Forúm</a>
+            <Link to="/forum">Forúm</Link>
           </li>
         </ul>
       </nav>
     </div>
   );
 }
-
-export default Header;
