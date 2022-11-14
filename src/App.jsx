@@ -1,10 +1,10 @@
-import Instituicao from './pages/admin/instituicao/instituicao'
-import InstituicaoUser from './pages/admin/instituicao_user/page'
-import Aplication from './pages/admin/admin_aplicacao/admin_aplicacao';
+import Admin from './pages/admin/Admin';
+import AdminUser from './pages/admin/AdminUser';
+import AdminApplication from './pages/admin/AdminApplication';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SecondForm from './form/SecondForm'
+import SecondForm from './form/SecondForm';
 
-import './App.css'
+import './App.css';
 
 function App() {
   return (
@@ -12,13 +12,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/'element={<SecondForm />} />
-          <Route path='/admim'element={<Instituicao />} />
-          <Route path='/admim-user'element={<InstituicaoUser/>} />
-          <Route path='/admim-aplication'element={<Aplication/>} />
+          <Route path='/admin'element={<Admin />} />
+          <Route path='/admin-user'element={<AdminUser/>} />
+          <Route path='/admin-application'element={<AdminApplication/>} />
         </Routes>
       </BrowserRouter>    
       </div>
   )
 }
 
-export default App
+export default App;

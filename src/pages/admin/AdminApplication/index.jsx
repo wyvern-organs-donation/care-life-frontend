@@ -1,10 +1,10 @@
 import Header from '../../../componets/admin/instituicao/header/header';
-import Navbar from './../../../componets/admin/admin_aplicacao/navbar/navbar';
+import Navbar from '../../../componets/admin/admin_aplicacao/navbar/navbar';
 import Buscar from '../../../componets/admin/instituicao_user/buscar/buscar';
-import './aplication.css'
+import './style.css'
 import { Container } from 'react-bootstrap';
 
-function Aplication() {
+function AdminApplication() {
     return (
         <div className='rowC'>
             <Navbar />
@@ -16,4 +16,4 @@ function Aplication() {
     )
 }
 
-export default Aplication
+export default AdminApplication
