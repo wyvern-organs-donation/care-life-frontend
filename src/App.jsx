@@ -8,7 +8,6 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path='/'element={<SecondForm />} />
@@ -17,7 +16,6 @@ function App() {
           <Route path='/admin-application'element={<AdminApplication/>} />
         </Routes>
       </BrowserRouter>    
-      </div>
   )
 }
 
