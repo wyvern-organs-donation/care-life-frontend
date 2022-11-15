@@ -1,6 +1,6 @@
 import Header from '../components/Header';
-import Navbar from '../components/BlueNavbar/navbar';
-import Buscar from '../AdminUser/components/buscar/buscar';
+import Navbar from '../components/BlueNavbar';
+import Search from '../components/Search';
 import './style.css'
 import { Container } from 'react-bootstrap';
 
@@ -10,7 +10,7 @@ function AdminApplication() {
             <Navbar />
             <Container className='background'>
                 <Header />
-                <Buscar />
+                <Search />
             </Container>
         </div>
     )
