@@ -1,6 +1,6 @@
-import Header from '../../../componets/admin/instituicao/header/header';
-import Navbar from '../../../componets/admin/admin_aplicacao/navbar/navbar';
-import Buscar from '../../../componets/admin/instituicao_user/buscar/buscar';
+import Header from '../components/Header/header';
+import Navbar from '../components/BlueNavbar/navbar';
+import Buscar from '../AdminUser/components/buscar/buscar';
 import './style.css'
 import { Container } from 'react-bootstrap';
 
