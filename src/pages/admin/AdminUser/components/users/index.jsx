@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Container from '@mui/material/Container';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,28 +16,28 @@ function GetUsers(props) {
             <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                    <TableCell align="right">Ações</TableCell>
-                    <TableCell align="center">Contato</TableCell>
-                    <TableCell align="left">Tipo</TableCell>
-                    <TableCell align="left">Data</TableCell>
-                    <TableCell align="left">Email</TableCell>
                     <TableCell align="center">Nome</TableCell>
+                    <TableCell align="center">Email</TableCell>
+                    <TableCell align="center">Data</TableCell>
+                    <TableCell align="center">Tipo</TableCell>
+                    <TableCell align="center">Contato</TableCell>
+                    <TableCell align="center">Ações</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {props.users.map((user) => (
                     <TableRow key={user.id}>
+                        <TableCell align="center">{user.name}</TableCell>
+                        <TableCell align="center">{user.email}</TableCell>
+                        <TableCell align="center">{user.birth_date}</TableCell>
+                        <TableCell align="center">{user.type}</TableCell>
+                        <TableCell align="center">{user.phone_number}</TableCell>
                         <TableCell align="center">
                             <ButtonGroup color="primary" aria-label="outlined primary button group">
                                 <Button onClick={() => props.userUpdate(user.id)}>Edit</Button>
                                 <Button onClick={() => props.userDelete(user.id)}>Del</Button>
                             </ButtonGroup>
                         </TableCell>
-                        <TableCell align="right">{user.phone_number}</TableCell>
-                        <TableCell align="left">{user.type}</TableCell>
-                        <TableCell align="left">{user.birth_date}</TableCell>
-                        <TableCell align="left">{user.email}</TableCell>
-                        <TableCell align="left">{user.name}</TableCell>
                     </TableRow>
                     ))}
                 </TableBody>
