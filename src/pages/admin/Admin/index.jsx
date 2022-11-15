@@ -1,11 +1,9 @@
-import Header from '../components/Header/header';
-import Navbar from '../components/WhiteNavbar/navbar';
-import Section from './components/section/section';
-import Doadores from './components/doadores/doadores'
-import Orgaos from './components/orgaos/orgaos';
-import Transplante from './components/transplantes/transplantes';
-import './style.css'
+import Header from '../components/Header';
+import Navbar from '../components/WhiteNavbar';
+import MainCard from './components/MainCard';
+import WhiteCard from './components/WhiteCard';
 import { Container } from 'react-bootstrap';
+import './style.css'
 
 function Admin() {
     return (
@@ -13,11 +11,11 @@ function Admin() {
             <Navbar />
             <Container className='background'>
                 <Header />
-                <Section />
+                <MainCard />
                 <div className='linha'>
-                    <Doadores />
-                    <Orgaos />
-                    <Transplante />
+                    <WhiteCard title="Doadores Cadastrados" />
+                    <WhiteCard title="Orgãos Cadastrados" />
+                    <WhiteCard title="Transplantes Realizados" />
                 </div>
             </Container>
         </div>

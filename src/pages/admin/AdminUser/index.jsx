@@ -1,4 +1,4 @@
-import Header from '../components/Header/header';
+import Header from '../components/Header';
 import Navbar from '../components/BlueNavbar/navbar';
 import Buscar from './components/buscar/buscar';
 import Button from './components/buttons/buttons';
