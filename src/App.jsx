@@ -1,16 +1,13 @@
-import { Header } from './Components/home/Header'
+import { Home } from './Components/home/Home'
 import './index.css'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export default function App() {
   return (
-    <div>
-       
-       <Header/>              
-       
-       <a href="http://ww3453eewe54erw465563">itau.com.br </a>
-              
-     </div>
+       <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+        </BrowserRouter>
   )
 }
-

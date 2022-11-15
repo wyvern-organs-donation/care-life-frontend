@@ -1,7 +1,9 @@
 import { Navbar } from "./Navbar";
+import './Home.css';
 
-export function Header() {
+export function Home() {
     return(
+      <div className="Home">
         <header>
           <Navbar />
           <div id='container'>
@@ -20,5 +22,6 @@ export function Header() {
             </div>
           </div>
         </header>
+      </div>
   );
 }
