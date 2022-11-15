@@ -12,16 +12,20 @@ function AdminUser() {
     const [users, setUser] = useState([]);
 
     useEffect(() => {
-        UserGet()
+        UsersGet()
     }, []);
 
-    const UserGet = () => {
+    const UsersGet = () => {
         api
         .get("/user")
         .then((response) => setUser(response.data))
         .catch((err) => {
             console.error("ops! ocorreu um erro" + err);
         });
+    }
+
+    const GetUser = id => {
+        window.location = '/view/'+id
     }
 
     const UpdateUser = id => {
@@ -33,13 +37,11 @@ function AdminUser() {
         .delete("/user/"+id)
         .then(
             (result) => {
-                UserGet();
+                UsersGet();
             }
         ).catch((err) => {
             console.error("ops! ocorreu um erro " + err);
-        });
-
-        
+        });  
     }
     
     return (
@@ -49,7 +51,7 @@ function AdminUser() {
                 <Header />
                 <Search />
                 <Button />
-                <GetUsers users={users} userDelete={UserDelete} userUpdate={UpdateUser} />
+                <GetUsers users={users} userDelete={UserDelete} userUpdate={UpdateUser} userGet={GetUser} />
             </Container>
             
         </div>
