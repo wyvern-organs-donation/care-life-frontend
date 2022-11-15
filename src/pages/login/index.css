@@ -56,6 +56,22 @@ form h2 {
   position: relative;
 }
 
+.text {
+  width: 326px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-link1);
+}
+
+.thanks {
+  width: 326px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-h2);
+}
+
 form label {
   text-align: start;
   color: var(--color-label);

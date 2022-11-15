@@ -15,7 +15,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/Background.svg");
+  background-image: url("../assets/authenctication/Background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

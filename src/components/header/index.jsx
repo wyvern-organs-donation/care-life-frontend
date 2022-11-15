@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="Header">
       <Link to="/home">
-        <img src="/src/assets/Care Life.svg" alt="Logo da CareLife" />
+        <img src="/src/assets/authenctication/Care Life.svg" alt="Logo da CareLife" />
       </Link>
       <nav className="Menu-Links">
         <ul>

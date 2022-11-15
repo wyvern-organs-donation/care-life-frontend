@@ -10,7 +10,7 @@ export default function Login() {
       <div className="Main">
         <picture>
           <img
-            src="src/assets/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
+            src="src/assets//authenctication/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
             alt=""
           />
         </picture>
@@ -34,7 +34,7 @@ export default function Login() {
                 id="password-login"
                 placeholder="Digite sua senha"
               />
-              <img src="src/assets/eye off.svg" alt="" />
+              <img src="src/assets/authenctication/eye off.svg" alt="" />
             </div>
           </div>
           <div className="forgot-password">

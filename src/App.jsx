@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 import Register from "./pages/user-register";
 import DonorRegister from "./pages/donor-register";
+import ConfirmRegister from "./pages/confirm-register";
 import "./pages/login/index";
 import "./style/global.css";
 
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/donor-register" element={<DonorRegister />}></Route>
+          <Route path="/confirm-register" element={<ConfirmRegister />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

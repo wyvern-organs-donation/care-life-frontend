@@ -11,7 +11,7 @@ export default function DonorRegister() {
       <div className="Main">
         <picture>
           <img
-            src="src/assets/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
+            src="src/assets/authenctication/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
             alt=""
           />
         </picture>
@@ -53,7 +53,7 @@ export default function DonorRegister() {
                 id="password"
                 placeholder="Digite sua senha"
               />
-              <img src="src/assets/eye off.svg" alt="" />
+              <img src="src/assets/authenctication/eye off.svg" alt="" />
             </div>
             <div className="password">
               <label htmlFor="password-repeat">Repetir senha</label>
@@ -63,7 +63,7 @@ export default function DonorRegister() {
                 id="password-repeat"
                 placeholder="Digite sua senha"
               />
-              <img src="src/assets/eye off.svg" alt="" />
+              <img src="src/assets/authenctication/eye off.svg" alt="" />
             </div>
           </div>
           <button type="submit">ENTRAR</button>
