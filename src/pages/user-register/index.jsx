@@ -1,9 +1,12 @@
 import React from "react";
+import Header from "../../components/header";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Register() {
   return (
     <React.Fragment>
+      <Header />
       <div className="Main">
         <picture>
           <img
@@ -11,11 +14,11 @@ export default function Register() {
             alt=""
           />
         </picture>
-        <form>
+        <form className="formUserRegister">
           <h2>Cadastro</h2>
           <div className="inputs">
             <div className="nome">
-              <label htmlFor="nome">Nome Completo</label>
+              <label htmlFor="nome">Nome completo</label>
               <input
                 type="text"
                 name="nome"
@@ -57,12 +60,12 @@ export default function Register() {
           </div>
           <button type="submit">ENTRAR</button>
           <div className="registered">
-            <a href="#">
-              <strong>Já tem conta?</strong>
-            </a>
             <p>
-              <strong>Realizar login</strong>
+              <strong>Já tem conta?</strong>
             </p>
+            <Link to="#">
+              <strong>Realizar login</strong>
+            </Link>
           </div>
         </form>
       </div>

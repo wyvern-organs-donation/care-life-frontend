@@ -39,13 +39,14 @@ form {
   max-height: 38.0625rem;
 }
 
-.formRegister-donor {
+.formRegister-donor, .formUserRegister {
   max-width: 33.25rem;
 }
 
 form h2 {
   width: 100%;
   margin-top: 1.625rem;
+  margin-bottom: 1rem;
   max-width: 23.75rem;
   color: var(--color-h2);
   font-weight: 700;
@@ -67,7 +68,6 @@ form label {
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  margin-top: 2.625rem;
   font-weight: 400;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
@@ -169,7 +169,7 @@ button:hover {
   background-color: #1168da;
 }
 
-.not-registered {
+.registered {
   display: flex;
   font-size: 14px;
   font-family: "Poppins", sans-serif;

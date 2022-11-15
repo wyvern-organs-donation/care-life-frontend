@@ -67,7 +67,7 @@ export default function DonorRegister() {
             </div>
           </div>
           <button type="submit">ENTRAR</button>
-          <div className="not-registered">
+          <div className="registered">
             <p>Já tem conta?</p>
             <Link to="/login">
               <strong>Realize o login</strong>

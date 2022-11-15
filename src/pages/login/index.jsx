@@ -49,7 +49,7 @@ export default function Login() {
             </div>
           </div>
           <button type="submit">ENTRAR</button>
-          <div className="not-registered">
+          <div className="registered">
             <p>Ainda não tem conta?</p>
             <Link to="/register">
               <strong>Cadastre-se</strong>
