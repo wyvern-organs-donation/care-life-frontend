@@ -12,13 +12,35 @@ function AdminUser() {
     const [users, setUser] = useState([]);
 
     useEffect(() => {
+        UserGet()
+    }, []);
+
+    const UserGet = () => {
         api
         .get("/user")
         .then((response) => setUser(response.data))
         .catch((err) => {
             console.error("ops! ocorreu um erro" + err);
         });
-    }, []);
+    }
+
+    const UpdateUser = id => {
+        window.location = '/update/'+id
+    }
+    
+    const UserDelete = id => {
+        api
+        .delete("/user/"+id)
+        .then(
+            (result) => {
+                UserGet();
+            }
+        ).catch((err) => {
+            console.error("ops! ocorreu um erro " + err);
+        });
+
+        
+    }
     
     return (
         <div className='rowC'>
@@ -27,7 +49,7 @@ function AdminUser() {
                 <Header />
                 <Search />
                 <Button />
-                <GetUsers users={users} />
+                <GetUsers users={users} userDelete={UserDelete} userUpdate={UpdateUser} />
             </Container>
             
         </div>
