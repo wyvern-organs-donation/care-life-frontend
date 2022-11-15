@@ -1,7 +1,7 @@
 import Header from '../components/Header';
-import Navbar from '../components/BlueNavbar/navbar';
-import Buscar from './components/buscar/buscar';
-import Button from './components/buttons/buttons';
+import Navbar from '../components/BlueNavbar';
+import Search from '../components/Search';
+import Button from './components/Button';
 import './style.css'
 import { Container } from 'react-bootstrap';
 
@@ -11,7 +11,7 @@ function AdminUser() {
             <Navbar />
             <Container className='background'>
                 <Header />
-                <Buscar />
+                <Search />
                 <Button />
             </Container>
         </div>

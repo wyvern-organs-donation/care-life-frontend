@@ -1,7 +1,7 @@
-import React from 'react'
-import './buscar.css'
+import React from 'react';
+import './style.css';
   
-const buscar = () => {
+const Search = () => {
   return (
     <div className='buscar'>
         <h3>Painel de Controle</h3>
@@ -9,6 +9,6 @@ const buscar = () => {
         <input type="date" placeholder='dd/mm/yy'></input>
     </div>
   );
-}
+};
   
-export default buscar
+export default Search;
