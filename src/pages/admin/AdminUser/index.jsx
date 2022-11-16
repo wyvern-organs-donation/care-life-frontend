@@ -24,12 +24,16 @@ function AdminUser() {
         });
     }
 
-    const GetUser = id => {
-        window.location = '/view/'+id
-    }
-
-    const UpdateUser = id => {
-        window.location = '/update/'+id
+    const UpdateUser = (id, user) => {
+        api
+        .put("/user/"+id, user)
+        .then(
+            (result) => {
+                UsersGet();
+            }
+        ).catch((err) => {
+            console.error("ops! ocorreu um erro " + err);
+        });  
     }
     
     const UserDelete = id => {
@@ -51,7 +55,7 @@ function AdminUser() {
                 <Header />
                 <Search />
                 <Button />
-                <GetUsers users={users} userDelete={UserDelete} userUpdate={UpdateUser} userGet={GetUser} />
+                <GetUsers users={users} userDelete={UserDelete} updateUser={UpdateUser}/>
             </Container>
             
         </div>
