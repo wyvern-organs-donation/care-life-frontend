@@ -1,0 +1,44 @@
+.Navbar{
+    padding-top: 2%;
+    padding-bottom: 5%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navbar > .nav-logo {
+    margin-left: 10%;
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+}
+
+.Navbar > .nav-items > a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: relative;
+    animation: all ease-in-out;
+}
+
+.Navbar > .nav-items > a::after{
+    content: " ";
+    width: 0%;
+    height: 5%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease-in-out;
+}
+.Navbar > .nav-items > a:hover::after{
+    width: 100%;
+}
+.Navbar > .nav-items > a:hover,
+.Navbar > .nav-items > a:focus{
+    transition-duration: 0.2s;
+    color: #01cfc9;
+}

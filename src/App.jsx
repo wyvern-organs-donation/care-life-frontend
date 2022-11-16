@@ -9,8 +9,7 @@ import ConfirmRegister from "./pages/register/confirm-register";
 import "./pages/login/index";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import SecondForm from './form/SecondForm';
-
-import './App.css';
+import { Home } from './pages/home/components/Home'
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -35,7 +34,12 @@ function App() {
   };
 
   return (
+    
       <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />          
+        </Routes>
+        
         <Routes>
           <Route path='/'element={<SecondForm />} />
           <Route path='/admin'element={
