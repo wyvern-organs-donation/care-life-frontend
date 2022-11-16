@@ -24,9 +24,13 @@ function AdminUser() {
         });
     }
 
-    const UpdateUser = (id, user) => {
+    const UpdateUser = (id, data) => {
         api
-        .put("/user/"+id, user)
+        .put("/user/"+id, data, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
         .then(
             (result) => {
                 UsersGet();

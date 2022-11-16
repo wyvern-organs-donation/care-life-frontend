@@ -80,8 +80,7 @@ class ModalUser extends Component {
                                         hidden={true}
                                         type="text"
                                         name="id"
-                                        value={this.props.user.id}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.id}
                                         id="id"
                                     />
                                     <label htmlFor="name">Nome</label>
@@ -89,8 +88,7 @@ class ModalUser extends Component {
                                         disabled={disabled}
                                         type="text"
                                         name="name"
-                                        value={this.props.user.name}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.name}
                                         id="name"
                                     />
                                 </Grid>
@@ -100,8 +98,7 @@ class ModalUser extends Component {
                                         disabled={disabled}
                                         type="email"
                                         name="email"
-                                        value={this.props.user.email}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.email}
                                         id="email"
                                     />
                                 </Grid>
@@ -109,10 +106,9 @@ class ModalUser extends Component {
                                     <label htmlFor="birth_date">Data de Nascimento</label>
                                     <input
                                         disabled={disabled}
-                                        type="birth_date"
+                                        type="text"
                                         name="birth_date"
-                                        value={this.props.user.birth_date.split("T")[0]}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.birth_date.split("T")[0].split('-').reverse().join('-')}
                                         id="birth_date"
                                     />
                                 </Grid>
@@ -120,10 +116,9 @@ class ModalUser extends Component {
                                     <label htmlFor="phone_number">Contato</label>
                                     <input
                                         disabled={disabled}
-                                        type="phone_number"
+                                        type="text"
                                         name="phone_number"
-                                        value={this.props.user.phone_number}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.phone_number}
                                         id="phone_number"
                                     />
                                 </Grid>
@@ -131,10 +126,9 @@ class ModalUser extends Component {
                                     <label htmlFor="cpf">Documento</label>
                                     <input
                                         disabled={disabled}
-                                        type="cpf"
+                                        type="text"
                                         name="cpf"
-                                        value={this.props.user.cpf}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.cpf}
                                         id="cpf"
                                     />
                                 </Grid>
@@ -142,10 +136,9 @@ class ModalUser extends Component {
                                     <label htmlFor="adress">Endereço</label>
                                     <input
                                         disabled={disabled}
-                                        type="adress"
+                                        type="text"
                                         name="adress"
-                                        value={this.props.user.adress}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.adress}
                                         id="adress"
                                     />
                                 </Grid>
@@ -153,10 +146,9 @@ class ModalUser extends Component {
                                     <label htmlFor="city">Cidade</label>
                                     <input
                                         disabled={disabled}
-                                        type="city"
+                                        type="text"
                                         name="city"
-                                        value={this.props.user.city}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.city}
                                         id="city"
                                     />
                                 </Grid>
@@ -164,10 +156,9 @@ class ModalUser extends Component {
                                     <label htmlFor="state">Estado</label>
                                     <input
                                         disabled={disabled}
-                                        type="state"
+                                        type="text"
                                         name="state"
-                                        value={this.props.user.state}
-                                        onChange={e => this.setState({ text: e.target.value })}
+                                        defaultValue={this.props.user.state}
                                         id="state"
                                     />
                                 </Grid>
