@@ -1,4 +1,5 @@
 import { Navbar } from "./Navbar";
+import { Body1 } from "./Body1"
 import './Home.css';
 
 export function Home() {
@@ -22,6 +23,9 @@ export function Home() {
             </div>
           </div>
         </header>
+        <div>
+          <Body1 />
+        </div>
       </div>
   );
 }
