@@ -7,11 +7,11 @@ export function Navbar() {
         <div className="Navbar">
             <span className="nav-logo">Care Life</span>
             <div className="nav-items">
-                <Link to="/">Home</Link>
-                <Link to="/Signup">Entrar</Link>
-                <Link to="/Signin">Cadastrar</Link>
-                <Link to="/About">Porque Doar</Link>
-                <Link to="/Forum">Fórum</Link>
+                <Link to="/">Início</Link>
+                <Link to="/login">Entrar</Link>
+                <Link to="/register">Cadastrar</Link>
+                <Link to="/porque-doar">Porque Doar</Link>
+                <Link to="/forum">Fórum</Link>
             </div>
         </div>
     )
