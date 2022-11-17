@@ -2,6 +2,7 @@ import React from "react";
 
 import { Navbar } from "./Navbar";
 import './home.css';
+import { Article } from "./Article";
 
 
 export function Home() {
@@ -25,7 +26,9 @@ export function Home() {
             </div>
           </div>
         </header>
+        <Article/>
         
+
       </div>
   );
 }
