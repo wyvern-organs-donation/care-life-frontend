@@ -1,4 +1,4 @@
-import './Body1.css';
+import './Body1.css'
 
 export function Body1(){
     return(
