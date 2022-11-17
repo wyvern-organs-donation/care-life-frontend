@@ -12,10 +12,10 @@ function AdminUser() {
     const [users, setUser] = useState([]);
 
     useEffect(() => {
-        UserGet()
+        UsersGet()
     }, []);
 
-    const UserGet = () => {
+    const UsersGet = () => {
         api
         .get("/user")
         .then((response) => setUser(response.data))
@@ -24,8 +24,20 @@ function AdminUser() {
         });
     }
 
-    const UpdateUser = id => {
-        window.location = '/update/'+id
+    const UpdateUser = (id, data) => {
+        api
+        .put("/user/"+id, data, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+        .then(
+            (result) => {
+                UsersGet();
+            }
+        ).catch((err) => {
+            console.error("ops! ocorreu um erro " + err);
+        });  
     }
     
     const UserDelete = id => {
@@ -33,13 +45,11 @@ function AdminUser() {
         .delete("/user/"+id)
         .then(
             (result) => {
-                UserGet();
+                UsersGet();
             }
         ).catch((err) => {
             console.error("ops! ocorreu um erro " + err);
-        });
-
-        
+        });  
     }
     
     return (
@@ -49,7 +59,7 @@ function AdminUser() {
                 <Header />
                 <Search />
                 <Button />
-                <GetUsers users={users} userDelete={UserDelete} userUpdate={UpdateUser} />
+                <GetUsers users={users} userDelete={UserDelete} updateUser={UpdateUser}/>
             </Container>
             
         </div>
