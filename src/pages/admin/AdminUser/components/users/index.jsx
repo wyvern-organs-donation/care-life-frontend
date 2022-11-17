@@ -38,7 +38,7 @@ function GetUsers(props) {
                             <ButtonGroup color="primary" aria-label="outlined primary button group">
                                 <ModalUser buttonLabel="View" user={user} action={props.updateUser} />
                                 <ModalUser buttonLabel="Edit" user={user} action={props.updateUser} />
-                                <IconButton onClick={() => props.userDelete(user.id)}><DeleteIcon /></IconButton> 
+                                <ModalUser buttonLabel="Delete" user={user} action={props.userDelete}/>
                             </ButtonGroup>
                         </TableCell>
                     </TableRow>
