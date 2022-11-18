@@ -1,3 +1,9 @@
+import Phone from '../images/Phone.png'
+import Facebook from '../images/Facebook.png'
+import Twitter from '../images/Twitter.png'
+import Instagram from '../images/Instagram.png'
+import Linkedin from '../images/Linkedin.png'
+import ChatIcon from '../images/ChatIcon.png'
 import "./Footer.css"
 
 export function Footer() {
@@ -7,22 +13,22 @@ export function Footer() {
             <li className="CA">
                 <p>Central de Atendimento</p>
                 <p>São Paulo</p>
-                <p><img src="./src/images/Phone.png"/>+55 11 0000-0000</p>
-                <p><img src="./src/images/Phone.png"/>+55 11 0000-0000</p>
-                <p><img src="./src/images/Phone.png"/>+55 11 0000-0000</p>
+                <p><img src={ Phone } />+55 11 0000-0000</p>
+                <p><img src={ Phone } />+55 11 0000-0000</p>
+                <p><img src={ Phone } />+55 11 0000-0000</p>
             </li>
             <li className="CA">
                 <p>Fale Conosco</p>
-                <p id="img"><img src="./src/images/ChatIcon.png"/></p>
+                <p id="img"><img src={ChatIcon} /></p>
                 <p>Trabalhe Conosco</p>
             </li>
             <li className="CA">
                 <p>Nossos Canais</p>
                 <div id="sM">
-                    <img className="sC" src="./src/images/Facebook.png"/>
-                    <img className="sC" src="./src/images/Twitter.png"/>
-                    <img className="sC" src="./src/images/Instagram.png"/>
-                    <img className="sC" src="./src/images/Linkedin.png"/>
+                    <img className="sC" src={Facebook} />
+                    <img className="sC" src={Twitter} />
+                    <img className="sC" src={Instagram} />
+                    <img className="sC" src={Linkedin} />
                 </div>
             </li>
             </ul>
