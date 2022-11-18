@@ -1,0 +1,46 @@
+#form{
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 96%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+form{
+    color: #19355C;
+    background-color: rgb(226, 226, 226);
+    border-radius: 10px;
+    width: 70%;
+    height: 400px;
+    box-shadow: 3px 3px 6px black;
+}
+
+form h1{
+    margin: 1.5%;
+}
+
+form > #name, #email, #doubt{
+    margin: 1%;
+    margin-left: 2%;
+    background: #01CFC9;
+    border-radius: 6px;
+}
+
+input::placeholder{
+    color: black;
+}
+
+form > #doubt{
+    width: 93.7%;
+    height: 50%;
+    margin-bottom: 2%;
+}
+
+
+form > #name, #email{
+    width: 45%;
+    height: 10%;
+}
