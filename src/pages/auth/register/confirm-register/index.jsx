@@ -1,18 +1,14 @@
 import React from "react";
-import Header from "../components/header";
-import "./index.css";
+import Header from "../../components/header";
+import Picture from "../../components/picture";
+import "../../login/index.css";
 
 export default function ConfirmRegister() {
   return (
     <React.Fragment>
       <Header />
       <div className="Main">
-      <picture>
-          <img
-            src="src/assets//authenctication/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
-            alt=""
-          />
-        </picture>
+      <Picture />
         <form className="formName">
           <h2>Complete seu cadastro</h2>
           <div className="text">

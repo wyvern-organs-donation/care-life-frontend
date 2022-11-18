@@ -22,6 +22,7 @@
 .Menu-Links ul li a {
   color: white;
   animation: all ease-in-out;
+  text-decoration: none;
 }
 
 .Menu-Links ul li a:hover,

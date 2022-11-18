@@ -1,9 +1,13 @@
 import React from "react";
-import Header from "./components/header";
-import { Link } from "react-router-dom";
-import "./index.css";
-import api from "../../services/api";
+import api from "../../../services/api";
+import Header from "../components/header";
+import Picture from "../components/picture"
+import Inputs from "../components/inputs-text";
+import InputsPass from "../components/inputs-pass";
+import FooterForm from "../components/footer_form";
+import RememberPass from "../components/remember_pass";
 import { useRef, useState, useEffect } from "react";
+import "../login/index.css";
 
 export default function Login() { 
   const emailRef = useRef();
@@ -43,7 +47,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    emailRef.current.focus();
+    // emailRef.current.focus();
   }, []);
   
   useEffect(() => {
@@ -54,12 +58,7 @@ export default function Login() {
     <React.Fragment>
       <Header />
       <div className="Main">
-        <picture>
-          <img
-            src="src/assets//authenctication/nurse-man-holds-heart-isolated-white-background-removebg-preview 2.png"
-            alt=""
-          />
-        </picture>
+        <Picture />
         {success ? (
             <section>
               <h1>You are logged in!</h1>
@@ -74,49 +73,44 @@ export default function Login() {
             <form onSubmit={handleSubmit} className="formName">
               <h2>Login</h2>
               <div className="inputs">
-                <div className="email">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
+                <Inputs
+                    class="email"
+                    htmlFor="email"
+                    title="Email"
                     name="email"
                     ref={emailRef}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value)
+                    }}
                     value={email}
                     id="email-login"
                     placeholder="Digite seu email"
                   />
-                </div>
-                <div className="password">
-                  <label htmlFor="passwor-login">Senha</label>
-                  <input
-                    type="password"
-                    name="password-login"
-                    onChange={(e) => setPwd(e.target.value)}
-                    value={password}
-                    id="password-login"
-                    placeholder="Digite sua senha"
+                <InputsPass
+                  class="password"
+                  title="Senha"
+                  type="password"
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={password}
+                  id="password-login"
+                  placeholder="Digite sua senha"
                   />
-                  <img src="src/assets/authenctication/eye off.svg" alt="" />
-                </div>
               </div>
-              <div className="forgot-password">
-                <a href="#">
-                  <strong>Esqueceu a senha?</strong>
-                </a>
-                <div className="remember-password">
-                  <p>
-                    <strong>Lembrar senha</strong>
-                  </p>
-                  <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-              </div>
-              <button className="login-btn" type="submit">ENTRAR</button>
-              <div className="registered">
-                <p>Ainda não tem conta?</p>
-                <Link to="/register">
-                  <strong>Cadastre-se</strong>
-                </Link>
-              </div>
+              <RememberPass
+                class="forgot-password"
+                classLink="rememberLink"
+                forgot="Esqueceu a senha?"
+                classRemember="remember-password"
+                remember="Lembrar senha"
+              />
+              <button className="auth-btn" type="submit">ENTRAR</button>
+              <FooterForm
+                class="registered"
+                classFooter="link"
+                text="Ainda não tem conta?"
+                url="/register"
+                link="Cadastre-se"
+                />
             </form>
           </section>)}
       </div>
