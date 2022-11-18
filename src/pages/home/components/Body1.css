@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+}
+
+.word{
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    color: rgb(80, 80, 80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textInfo{
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    color: #19355C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textInfo > #tWD{
+    width: 30%;
+    margin: 4%;
+    font-weight: 900;
+    font-size: 3.5em;
+    line-height: 98px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.textInfo > #wD{
+    font-weight: 900;
+    font-size: 1.3em;
+}
+
+#logoParc{
+    margin-left: 15%;
+    margin-top: 3%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#beneficios{
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    color: #19355C;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    text-align: left;
+    align-items: center;
+}
+
+#beneficios > .bnf > img{
+    margin: 3%;
+    margin-left: 16%;
+    padding: 2%;
+    padding-left: 17%;
+    padding-right: 17%;
+    background-color: rgb(226, 226, 226);
+    width: 35%;
+    margin-bottom: 5%;
+    box-shadow: 3px 3px 6px black;
+    border-radius: 6px;
+}

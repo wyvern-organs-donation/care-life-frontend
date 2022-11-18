@@ -2,11 +2,16 @@ import React from 'react'
 import iHealth from '../images/iHealth.svg'
 import twoHeart from '../images/twoHeart.svg'
 import idCard from '../images/idCard.svg'
+import { Body1 } from './Body1'
+
 
 
 export function Article() {
     return (
         <article>
+            <section>
+                <Body1 />
+            </section>
             <section>
                 <div>
                     <img src={iHealth} />
