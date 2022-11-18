@@ -45,10 +45,6 @@ export default function Login() {
       errRef.current.focus();
     }
   };
-
-  useEffect(() => {
-    // emailRef.current.focus();
-  }, []);
   
   useEffect(() => {
     setErrMsg("");

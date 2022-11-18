@@ -48,10 +48,6 @@ export default function Register() {
   }
 
   useEffect(() => {
-    // emailRef.current.focus();
-  }, []);
-
-  useEffect(() => {
     setErrMsg("");
   }, [name, email, password]);
 
