@@ -12,3 +12,47 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+
+h2{
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: rgb(80, 80, 80);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logoParc{
+  margin-left: 15%;
+  margin-top: 3%;
+  width: 80%;
+  display: flex;
+  
+}
+
+h3{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: rgb(80, 80, 80);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-weight:900 ;
+}
+
+section p{
+  font-size: 25px;
+}
+
+section div button{
+  font-size: 16px;
+    font-family: 'Verdana';
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    color: #ffffff;
+    background-color: #1168DA;
+    border-radius: 25px;
+}
