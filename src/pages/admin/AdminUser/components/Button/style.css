@@ -1,9 +1,14 @@
-.button {
+.buttons-line {
+    width: 80%;
     display: flex;
-    justify-content: space-around;
+    margin: 0 auto;
 }
 
-.button button {
+.buttons-line button {
     background-color: transparent;
     color: #778CA2;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: none;
+    margin-right: 1.25rem;
 }

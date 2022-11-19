@@ -28,18 +28,18 @@
     text-align: left;
 }
 
-.textInfo > #wD{
-    font-weight: 900;
-    font-size: 1.3em;
-}
-
-.divSection{
+#logoParc{
     margin-left: 15%;
     margin-top: 3%;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.textInfo > #wD{
+    font-weight: 900;
+    font-size: 1.3em;
 }
 
 #beneficios{
@@ -59,7 +59,8 @@
     padding-left: 17%;
     padding-right: 17%;
     background-color: rgb(226, 226, 226);
-    width: 35%;
+    width: 30%;
+    height: 30%;
     margin-bottom: 5%;
     box-shadow: 3px 3px 6px black;
     border-radius: 6px;
