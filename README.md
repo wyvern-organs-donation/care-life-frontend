@@ -19,7 +19,7 @@ Utilizamos o `npm install` para instalar todas as depedências utilizadas no pro
 ```
 
 
-E, por fim, usamos o `npm start` para iniciar o servidor em modo de desenvolvimento  no endereço: [http://localhost:3000](http://localhost:3000)
+E, por fim, usamos o `npm start` para iniciar o servidor em modo de desenvolvimento  no endereço:
 ```
     npm run dev
 ```
