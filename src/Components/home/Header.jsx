@@ -1,3 +1,5 @@
+import React from "react"
+import { Link } from "react-router-dom"
 import { Navbar } from "./Navbar"
 import "./Header.css"
 
@@ -17,7 +19,7 @@ export function Header() {
                 <p>Milhares de brasileiros esperam por um transplante.</p>
                 <p>Ser um doador é um ato de Amor e Solidariedade.</p>
               </div>
-              <button id='btSingin'>Seja um doador</button>
+              <Link to="/register"><button id='btSingin'>Seja um doador</button></Link>
             </div>
           </div>
         </header>
