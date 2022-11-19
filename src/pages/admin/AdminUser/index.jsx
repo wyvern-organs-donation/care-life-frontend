@@ -4,7 +4,7 @@ import Navbar from '../components/BlueNavbar';
 import Search from '../components/Search';
 import Button from './components/Button';
 import GetUsers from './components/users';
-import './style.css'
+import './style.css';
 import { Container } from 'react-bootstrap';
 import api from "../../../services/api";
 
@@ -32,7 +32,7 @@ function AdminUser() {
             }
           })
         .then(
-            (result) => {
+            () => {
                 UsersGet();
             }
         ).catch((err) => {
@@ -40,11 +40,11 @@ function AdminUser() {
         });  
     }
     
-    const UserDelete = id => {
+    const UserDelete = (id) => {
         api
         .delete("/user/"+id)
         .then(
-            (result) => {
+            () => {
                 UsersGet();
             }
         ).catch((err) => {
