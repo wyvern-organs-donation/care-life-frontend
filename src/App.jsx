@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Admin from './pages/admin/Admin';
 import AdminUser from './pages/admin/AdminUser';
 import AdminApplication from './pages/admin/AdminApplication';
-import Login from "./pages/login";
-import Register from "./pages/register/user-register";
-import DonorRegister from "./pages/register/donor-register";
-import ConfirmRegister from "./pages/register/confirm-register";
-import "./pages/login/index";
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register/user-register";
+import DonorRegister from "./pages/auth/register/donor-register";
+import ConfirmRegister from "./pages/auth/register/confirm-register";
+import "./pages/auth/login";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import SecondForm from './form/SecondForm';
 import { Home } from './pages/home/components/Home'
