@@ -8,8 +8,10 @@ import DonorRegister from "./pages/auth/register/donor-register";
 import ConfirmRegister from "./pages/auth/register/confirm-register";
 import "./pages/auth/login";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import SecondForm from './form/SecondForm';
+
 import { Home } from './pages/home/components/Home'
+
+import FormControler from "./pages/auth/form/FormControler";
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -41,7 +43,8 @@ function App() {
         </Routes>
         
         <Routes>
-          <Route path='/'element={<SecondForm />} />
+          
+          <Route path='/donor-form1'element={<FormControler/>} />
           <Route path='/admin'element={
             <ProtectedRoute
               redirectPath="/"
