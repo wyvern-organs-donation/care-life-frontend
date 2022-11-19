@@ -41,7 +41,7 @@ export function Article() {
                     <div>
                         <h3>Tenha uma Carteirinha de Doador de Orgãos ou Atualize Sua Carteirinha</h3>
                         <button>Registrar Carteirinha de Doador</button>
-                        <botton>Atualizar Carteirinha de Doador</botton>
+                        <button>Atualizar Carteirinha de Doador</button>
                     </div>
                 </div>
             </section>
