@@ -31,8 +31,8 @@ export default function Login() {
       localStorage.setItem("user", response?.data?.user);
       setSuccess(true);
       //clear state and controlled inputs
-      setUser("");
       setPwd("");
+      window.location.href="/"
     } catch (err) {
       console.log(err)
       if (!err?.response) {

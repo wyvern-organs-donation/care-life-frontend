@@ -44,7 +44,6 @@
 
 .formName {
   max-width: 33.25rem;
-  /* max-height: 38.0625rem; */
 }
 
 .formRegister-donor, .formUserRegister {
@@ -54,7 +53,7 @@
 .formName h2 {
   width: 100%;
   margin-top: 1.625rem;
-  margin-bottom: 3.125rem;
+  margin-bottom: 1rem;
   padding-bottom: 1rem;
   max-width: 23.75rem;
   color: var(--color-h2);
@@ -92,7 +91,7 @@
 .inputs {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
   font-weight: 400;
   font-size: 14px;
@@ -103,18 +102,21 @@
 .password,
 .password-repeat,
 .telefone,
-.nome {
+.nome,
+.date,
+.cpf,
+.phone {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 .eye {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   right: 70px;
-  bottom: 10px;
+  bottom: 13px;
 }
 
 .inputs input {
@@ -131,10 +133,6 @@
 .inputs input::placeholder {
   color: var(--color-border-input);
 }
-
-/* .inputs{
-  position: relative;
-} */
 
 .inputs .eye:hover {
   cursor: pointer;
@@ -207,7 +205,7 @@
   justify-content: center;
   gap: 16px;
   padding-top: 2rem;
-  padding-bottom: 2.375rem;
+  padding-bottom: 1rem;
   border-top: 1px solid #98a9bc;
 }
 

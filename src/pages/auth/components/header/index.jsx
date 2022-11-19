@@ -11,7 +11,7 @@ export default function Header() {
       <nav className="Menu-Links">
         <ul className="ul-header">
           <li className="list-itens">
-            <Link exact to="/" className="links-header">Início</Link>
+            <Link to="/" className="links-header">Início</Link>
           </li>
           <li className="list-itens">
             <Link to="/login" className="links-header">Entrar</Link>
