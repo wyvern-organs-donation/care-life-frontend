@@ -7,7 +7,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ModalUser from '../Modal';
   
 function GetUsers(props) {
     return (
@@ -34,8 +36,9 @@ function GetUsers(props) {
                         <TableCell align="center">{user.phone_number}</TableCell>
                         <TableCell align="center">
                             <ButtonGroup color="primary" aria-label="outlined primary button group">
-                                <Button onClick={() => props.userUpdate(user.id)}>Edit</Button>
-                                <Button onClick={() => props.userDelete(user.id)}>Del</Button>
+                                <ModalUser buttonLabel="View" user={user} action={props.updateUser} />
+                                <ModalUser buttonLabel="Edit" user={user} action={props.updateUser} />
+                                <IconButton onClick={() => props.userDelete(user.id)}><DeleteIcon /></IconButton> 
                             </ButtonGroup>
                         </TableCell>
                     </TableRow>
