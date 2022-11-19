@@ -55,7 +55,7 @@ function AdminUser() {
     return (
         <div className='rowC'>
             <Navbar />
-            <Container className='background'>
+            <Container className='admin-background'>
                 <Header />
                 <Search />
                 <Button />

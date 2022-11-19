@@ -70,8 +70,8 @@ function Admin() {
         <div className='rowC'>
             <Navbar />
             <Container className='admin-background'>
-                <main className="admin-main">
                 <Header />
+                <main className="admin-main">
                 <MainCard />
                 <div className='cards-row'>
                     <WhiteCard title="Doadores Cadastrados" imgSrc="/src/assets/admin/Group.svg" count={users.length} />

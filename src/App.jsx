@@ -45,9 +45,7 @@ function App() {
           <Route path='/admin'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={
-                true
-              }
+              isAllowed={!!user}
             >
               <Admin />
             </ProtectedRoute>
@@ -63,9 +61,7 @@ function App() {
           <Route path='/admin-application'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={
-                !!user
-              }
+              isAllowed={!!user}
             >
               <AdminApplication />
             </ProtectedRoute>

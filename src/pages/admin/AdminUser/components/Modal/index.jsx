@@ -89,7 +89,7 @@ class ModalUser extends Component {
                         disabled={this.disabled}
                         type="text"
                         name="birth_date"
-                        defaultValue={this.props.user.birth_date.split("T")[0].split('-').reverse().join('-')}
+                        defaultValue={this.props.user?.birth_date?.split("T")[0].split('-').reverse().join('-') || '00-00-000'}
                         id="birth_date"
                     />
                 </Grid>

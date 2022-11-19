@@ -1,15 +1,19 @@
-.buscar {
+.search {
+    width: 80%;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.buscar h3 {
+.search h3 {
     color: #00978F;
-    align-items: flex-start;
+    margin-right: 5rem;
 }
 
-.buscar input {
+.search input {
     background-color: white;
     border: none;
+    border-radius: 9px;
+    padding: 1rem;
+    margin-right: 4rem;
 }

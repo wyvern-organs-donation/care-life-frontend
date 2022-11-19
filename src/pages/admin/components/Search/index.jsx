@@ -3,7 +3,7 @@ import './style.css';
   
 const Search = () => {
   return (
-    <div className='buscar'>
+    <div className='search'>
         <h3>Painel de Controle</h3>
         <input type="text"></input>
         <input type="date" placeholder='dd/mm/yy'></input>

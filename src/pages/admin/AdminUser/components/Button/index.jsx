@@ -3,9 +3,9 @@ import './style.css'
   
 const Button = () => {
   return (
-    <div className='button'>
+    <div className='buttons-line'>
         <button>Cadastrar</button>
-        <button>DOWNLOAD</button>
+        <button>Download</button>
     </div>
   );
 }
