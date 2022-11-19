@@ -7,6 +7,10 @@
   --color-btn-off: #4d7cfe66;
 }
 
+*{
+  margin: 0;
+}
+
 .container {
   background-size: cover;
   background-repeat: no-repeat;
