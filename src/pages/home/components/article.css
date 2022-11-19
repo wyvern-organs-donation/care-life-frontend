@@ -1,58 +1,95 @@
 *{
-    margin: 0px;
-  }
-
-#btSingin{
-    color: white;
-    margin-top: 10%;
-    background-color: rgb(0, 190, 204);
-    font-size: 1.3em;
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+  margin: 0px;
 }
 
-h2{
+#article{
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  color: rgb(80, 80, 80);
+}
+
+.btnSingin{
+  color: white;
+  margin-left: 5%;
+  margin-top: 10%;
+  background-color: rgb(0, 190, 204);
+  font-size: 1em;
+  width: 350px;
+  height: 80px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnRC{
+  color: white;
+  text-decoration: none;
+}
+
+.h2{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-#logoParc{
-  margin-left: 15%;
-  margin-top: 3%;
-  width: 80%;
-  display: flex;
-  
-}
-
-h3{
   margin-top: 10px;
   margin-bottom: 15px;
   font-size: 25px;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   color: rgb(80, 80, 80);
-  display: flex;
-  justify-content: left;
-  align-items: center;
   font-weight:900 ;
 }
 
-section p{
-  font-size: 25px;
+.imgArt{
+  width: 60%;
+  height: 60%;
 }
 
-section div button{
-  font-size: 16px;
-    font-family: 'Verdana';
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 15px;
-    margin-top: 15px;
-    color: #ffffff;
-    background-color: #1168DA;
-    border-radius: 25px;
+.section1, .section2{
+  margin-top: 3%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1{
+  margin-left: 10%;
+}
+
+.section2{
+  margin-left: 17%;
+  margin-bottom: 3%;
+}
+
+.h3-1{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: rgb(80, 80, 80);
+  font-weight:900 ;
+  }
+
+.h3{
+margin-left: 3%;
+margin-top: 10px;
+margin-bottom: 15px;
+font-size: 25px;
+font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+color: rgb(80, 80, 80);
+font-weight:900 ;
+}
+
+.wD{
+font-size: 25px;
+width: 50%;
+}
+
+.rM{
+font-size: 16px;
+  font-family: 'Verdana';
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin-top: 15px;
+  color: #ffffff;
+  background-color: #1168DA;
+  border-radius: 25px;
 }
