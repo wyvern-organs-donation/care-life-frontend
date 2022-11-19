@@ -8,7 +8,6 @@ import DonorRegister from "./pages/auth/register/donor-register";
 import ConfirmRegister from "./pages/auth/register/confirm-register";
 import "./pages/auth/login";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import SecondForm from './form/SecondForm';
 import { Home } from './pages/home/components/Home'
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
         </Routes>
         
         <Routes>
-          <Route path='/'element={<SecondForm />} />
           <Route path='/admin'element={
             <ProtectedRoute
               redirectPath="/"
