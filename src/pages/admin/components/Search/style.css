@@ -7,6 +7,9 @@
 
 .search h3 {
     color: #00978F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
     margin-right: 5rem;
 }
 
