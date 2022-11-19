@@ -69,14 +69,16 @@ function Admin() {
     return (
         <div className='rowC'>
             <Navbar />
-            <Container className='background'>
+            <Container className='admin-background'>
+                <main className="admin-main">
                 <Header />
                 <MainCard />
-                <div className='linha'>
-                    <WhiteCard title="Doadores Cadastrados" count={users.length} />
-                    <WhiteCard title="Orgãos Cadastrados" count={organs.length}/>
-                    <WhiteCard title="Receptores Cadastrados" count={receptor.length} />
+                <div className='cards-row'>
+                    <WhiteCard title="Doadores Cadastrados" imgSrc="/src/assets/admin/Group.svg" count={users.length} />
+                    <WhiteCard title="Orgãos Cadastrados" imgSrc="/src/assets/admin/heart.svg"  count={organs.length} />
+                    <WhiteCard title="Receptores Cadastrados" imgSrc="/src/assets/admin/registered-receivers.svg"  count={receptor.length} />
                 </div>
+                </main>
             </Container>
         </div>
     )

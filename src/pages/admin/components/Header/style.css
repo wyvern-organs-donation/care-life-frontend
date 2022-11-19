@@ -1,23 +1,20 @@
-.Header {
+.admin-header {
     display: flex;
-    position: initial;
-
+    justify-content: space-between;
+    align-items: center;
 }
 
-.Header h3 {
+.admin-header h3 {
     color: #19355C;
-    margin-left: 2rem;
 }
 
-.Header img {
+.admin-header img {
     margin-top: 1rem;
-    margin-left: 300px;
-    margin-right: 30px;
 }
 
-.Header button {
+.admin-header button {
     background-color: #1168DA;
-    margin-right: 50px;
-    margin-top: 1rem; 
+    margin-top: 1rem;
+    margin-left: 1.75rem; 
     height: 3rem;
 }

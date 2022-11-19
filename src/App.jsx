@@ -46,7 +46,7 @@ function App() {
             <ProtectedRoute
               redirectPath="/"
               isAllowed={
-                !!user
+                true
               }
             >
               <Admin />
@@ -57,7 +57,6 @@ function App() {
               redirectPath="/"
               isAllowed={!!user}
             >
-              {console.log(!!user)}
               <AdminUser />
             </ProtectedRoute>
           } />

@@ -3,10 +3,12 @@ import "./style.css";
 
 function Header() {
   return (
-    <div className="Header">
+    <div className="admin-header">
       <h3>Care Life</h3>
-      <a href="#"><img src="/src/assets/admin/bell.svg" alt="sino" /></a>
-      <button>notificação</button>
+      <div>
+        <a href="#"><img src="/src/assets/admin/bell.svg" alt="sino" /></a>
+        <button>notificação <img src="/src/assets/admin/arrow-down.svg" alt="seta para baixo" /></button>
+      </div>
     </div>
   );
 }
