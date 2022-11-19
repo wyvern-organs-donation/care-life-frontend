@@ -3,6 +3,7 @@ import React from "react";
 import { Navbar } from "./Navbar";
 import './home.css';
 import { Article } from "./Article";
+import { Footer } from "./Footer";
 
 
 export function Home() {
@@ -26,7 +27,9 @@ export function Home() {
             </div>
           </div>
         </header>
-        <Article/>
+        <Article />
+        <Footer />
+        
         
 
       </div>
