@@ -51,7 +51,7 @@ export default function Login() {
   }, [email, password]);
   
   return (
-    <React.Fragment>
+    <div className="container">
       <Header />
       <div className="Main">
         <Picture />
@@ -110,6 +110,6 @@ export default function Login() {
             </form>
           </section>)}
       </div>
-    </React.Fragment>
+    </div>
   );
 }

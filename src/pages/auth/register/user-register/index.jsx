@@ -19,21 +19,29 @@ export default function Register() {
   const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const response = api.post(
+      const response = await api.post(
         "/user",
         JSON.stringify({name, email, password, passRepeat}),
         {
           headers: { "Content-Type": "application/json" },
         }
       );
+
+      if (response.status === 200) {
+        window.location.href="/confirm-register";
+      }
+
       setSuccess(true);
       setName("");
       setEmail("");
       setPassword("");
       setPassRepeat("");
+
+      console.log(data);
     } catch (err) {
       console.log(err);
       if (!err?.response) {
@@ -52,7 +60,7 @@ export default function Register() {
   }, [name, email, password]);
 
   return (
-    <React.Fragment>
+    <div className="container">
       <Header />
       <div className="Main">
         <Picture />
@@ -72,6 +80,7 @@ export default function Register() {
               class="nome"
               htmlFor="nome"
               title="Nome completo"
+              value={name}
               onChange={(e) => setName(e.target.value)}
               type="text"
               id="name-register"
@@ -81,6 +90,7 @@ export default function Register() {
               class="email"
               htmlFor="email"
               title="Email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               id="email-register"
@@ -90,6 +100,7 @@ export default function Register() {
               class="password"
               htmlFor="password-register"
               title="Senha"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               id="password-register"
@@ -99,6 +110,7 @@ export default function Register() {
               class="password-repeat"
               htmlFor="password-register-repeat"
               title="Repetir senha"
+              value={passRepeat}
               onChange={(e) => setPassRepeat(e.target.value)}
               type="password"
               id="password-register-repeat"
@@ -117,6 +129,6 @@ export default function Register() {
         </section>
         )}
       </div>
-    </React.Fragment>
+    </div>
   );
 }

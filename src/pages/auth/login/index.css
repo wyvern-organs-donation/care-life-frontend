@@ -7,7 +7,7 @@
   --color-btn-off: #4d7cfe66;
 }
 
-#root {
+.container {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

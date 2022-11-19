@@ -9,7 +9,7 @@ import "../../login/index.css";
 
 export default function DonorRegister() {
   return (
-    <React.Fragment>
+    <div className="container">
       <Header />
       <div className="Main">
         <Picture />
@@ -64,6 +64,6 @@ export default function DonorRegister() {
             />
         </form>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
