@@ -9,21 +9,21 @@ export default function Header() {
         <img src="/src/assets/authenctication/Care Life.svg" alt="Logo da CareLife" />
       </Link>
       <nav className="Menu-Links">
-        <ul>
-          <li>
-            <Link exact to="/">Início</Link>
+        <ul className="ul-header">
+          <li className="list-itens">
+            <Link to="/" className="links-header">Início</Link>
           </li>
-          <li>
-            <Link to="/login">Entrar</Link>
+          <li className="list-itens">
+            <Link to="/login" className="links-header">Entrar</Link>
           </li>
-          <li>
-            <Link to="/register">Cadastrar</Link>
+          <li className="list-itens">
+            <Link to="/register" className="links-header">Cadastrar</Link>
           </li>
-          <li>
-            <Link to="/porque-doar">Porque Doar</Link>
+          <li className="list-itens">
+            <Link to="/porque-doar" className="links-header">Porque Doar</Link>
           </li>
-          <li>
-            <Link to="/forum">Forúm</Link>
+          <li className="list-itens">
+            <Link to="/forum" className="links-header">Forúm</Link>
           </li>
         </ul>
       </nav>
