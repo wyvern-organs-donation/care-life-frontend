@@ -5,7 +5,7 @@ import "../../login/index.css";
 
 export default function ConfirmRegister() {
   return (
-    <React.Fragment>
+    <div className="container">
       <Header />
       <div className="Main">
       <Picture />
@@ -19,6 +19,6 @@ export default function ConfirmRegister() {
           </div>
         </form>
       </div>
-    </React.Fragment>
+    </div>
   );
 }

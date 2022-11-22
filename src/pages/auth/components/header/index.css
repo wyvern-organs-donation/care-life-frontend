@@ -7,7 +7,7 @@
   justify-content: space-between;
 }
 
-.Menu-Links ul {
+.Menu-Links .ul-header {
   font-weight: 400;
   font-size: 16px;
   font-family: "Nunito Sans", sans-serif;
@@ -15,18 +15,18 @@
   display: flex;
 }
 
-.Menu-Links ul li {
+.Menu-Links .ul-header .list-itens {
   margin: 0 2rem;
 }
 
-.Menu-Links ul li a {
+.Menu-Links .ul-header .list-itens .links-header {
   color: white;
   animation: all ease-in-out;
   text-decoration: none;
 }
 
-.Menu-Links ul li a:hover,
-.Menu-Links ul li a:focus {
+.Menu-Links .ul-header .list-itens .links-header:hover,
+.Menu-Links .ul-header .list-itens .links-header:focus {
   transition-duration: 0.2s;
   color: #01cfc9;
 }
