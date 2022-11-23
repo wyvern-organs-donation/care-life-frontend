@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Admin from './pages/admin/Admin';
 import AdminUser from './pages/admin/AdminUser';
+import AdminOrgan from './pages/admin/AdminOrgan';
+import AdminInstitution from './pages/admin/AdminInstitution';
 import AdminApplication from './pages/admin/AdminApplication';
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register/user-register";
@@ -53,6 +55,22 @@ function App() {
               isAllowed={!!user}
             >
               <AdminUser />
+            </ProtectedRoute>
+          } />
+          <Route path='/admin-organ'element={
+            <ProtectedRoute
+              redirectPath="/"
+              isAllowed={!!user}
+            >
+              <AdminOrgan />
+            </ProtectedRoute>
+          } />
+          <Route path='/admin-institution'element={
+            <ProtectedRoute
+              redirectPath="/"
+              isAllowed={!!user}
+            >
+              <AdminInstitution />
             </ProtectedRoute>
           } />
           <Route path='/admin-application'element={
