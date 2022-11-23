@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from '../components/Header';
 import Navbar from '../components/BlueNavbar';
 import Search from '../components/Search';
-import Button from './components/Button';
+import ButtonsLine from '../components/ButtonsLine';
 import GetUsers from './components/users';
 import './style.css';
 import api from "../../../services/api";
@@ -57,7 +57,7 @@ function AdminUser() {
             <div className='admin-background'>
                 <Header />
                 <Search title="Usuários" />
-                <Button />
+                <ButtonsLine />
                 <GetUsers users={users} userDelete={UserDelete} updateUser={UpdateUser}/>
             </div>
             
