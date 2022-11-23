@@ -4,11 +4,10 @@ import AdminUser from './pages/admin/AdminUser';
 import AdminApplication from './pages/admin/AdminApplication';
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register/user-register";
-import DonorRegister from "./pages/auth/register/donor-register";
 import ConfirmRegister from "./pages/auth/register/confirm-register";
-import "./pages/auth/login";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from './pages/home/components/Home'
+import "./pages/auth/login";
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -66,7 +65,6 @@ function App() {
           } />
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/donor-register" element={<DonorRegister />}></Route>
           <Route path="/confirm-register" element={<ConfirmRegister />}></Route>
         </Routes>
       </BrowserRouter>    
