@@ -11,7 +11,6 @@ export function Navbar() {
                 <Link to="/login">Entrar</Link>
                 <Link to="/register">Cadastrar</Link>
                 <Link to="/porque-doar">Porque Doar</Link>
-                <Link to="/forum">Fórum</Link>
             </div>
         </div>
     )

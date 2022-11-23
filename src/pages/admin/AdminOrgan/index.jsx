@@ -56,7 +56,7 @@ function AdminUser() {
             <Navbar />
             <div className='admin-background'>
                 <Header />
-                <Search title="Usuários" />
+                <Search title="Órgãos" />
                 <ButtonsLine />
                 <GetUsers users={users} userDelete={UserDelete} updateUser={UpdateUser}/>
             </div>
