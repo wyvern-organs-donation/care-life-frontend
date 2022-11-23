@@ -1,6 +1,8 @@
-## Configurando e inicializando o projeto
+## Care Life - Configurando e Inicializando o Projeto Frontend
 
-## Wyverns Squad
+### O Care Life é uma aplicação Web planejada e desenvolvida pela Wyverns Squad para o Bootcamp do Instituto Atlântico.
+
+## Equipe de desenvolvimento Wyverns Squad
 - Ana Carolina
 - Carlos Cesar
 - Gabriel da Silva Sá
@@ -9,6 +11,12 @@
 - Gustavo Henrique
 - Rafaella Sampaio
 - Tiago Costa
+
+## Tecnologia Utilizadas no Frontend
+- Vite
+- React
+
+> Status: Em desenvolvimento ⚠️
 
 Primeiramente deverá fazer o clone da aplicação em sua máquina:
 
