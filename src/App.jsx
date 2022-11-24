@@ -12,10 +12,10 @@ import { Home } from './pages/home/components/Home'
 import "./pages/auth/login";
 
 function App() {
-  const [user, setUser] = useState(localStorage.getItem("user"));
-  
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
+    const loggedInUser = JSON.parse(localStorage.getItem("user"));
     if (loggedInUser) {
       setUser(loggedInUser);
     }
@@ -29,22 +29,21 @@ function App() {
     if (!isAllowed) {
       return <Navigate to={redirectPath} replace />;
     }
-  
+
     return children;
   };
 
   return (
-    
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />          
+          <Route path='/' element={<Home />} />
         </Routes>
-        
+
         <Routes>
           <Route path='/admin'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <Admin />
             </ProtectedRoute>
@@ -52,7 +51,7 @@ function App() {
           <Route path='/admin-user'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminUser />
             </ProtectedRoute>
@@ -60,7 +59,7 @@ function App() {
           <Route path='/admin-organ'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminOrgan />
             </ProtectedRoute>
@@ -68,7 +67,7 @@ function App() {
           <Route path='/admin-institution'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminInstitution />
             </ProtectedRoute>
@@ -76,7 +75,7 @@ function App() {
           <Route path='/admin-application'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminApplication />
             </ProtectedRoute>
@@ -85,7 +84,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/confirm-register" element={<ConfirmRegister />}></Route>
         </Routes>
-      </BrowserRouter>    
+      </BrowserRouter>
   )
 }
 

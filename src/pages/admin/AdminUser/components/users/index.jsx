@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ModalUser from '../Modal';
 import './style.css';
-  
+
 function GetUsers(props) {
     return (
         <table className='table'>
@@ -24,7 +24,7 @@ function GetUsers(props) {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>{user.birth_date}</td>
-                    <td>{user.type}</td>
+                    <td>{user.user_types.name}</td>
                     <td>{user.phone_number}</td>
                     <td>
                         <ButtonGroup color="primary" aria-label="outlined primary button group">
@@ -39,5 +39,5 @@ function GetUsers(props) {
         </table>
     );
 }
-  
+
 export default GetUsers

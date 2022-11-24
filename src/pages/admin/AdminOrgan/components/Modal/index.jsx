@@ -21,7 +21,7 @@ const style = {
     p: 4,
   };
 
-class ModalUser extends Component {
+class ModalOrgan extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -61,89 +61,39 @@ class ModalUser extends Component {
                         hidden={true}
                         type="text"
                         name="id"
-                        defaultValue={this.props.user.id}
+                        defaultValue={this.props.organ.id}
                         id="id"
                     />
-                    <label htmlFor="name">Nome</label>
+                    <label htmlFor="type">Tipo</label>
                     <input
                         disabled={this.disabled}
                         type="text"
-                        name="name"
-                        defaultValue={this.props.user.name}
-                        id="name"
+                        name="type"
+                        defaultValue={this.props.organ.organ_types.name}
+                        id="type"
                     />
                 </Grid>
                 <Grid item xs={6}>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        disabled={this.disabled}
-                        type="email"
-                        name="email"
-                        defaultValue={this.props.user.email}
-                        id="email"
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <label htmlFor="birth_date">Data de Nascimento</label>
+                    <label htmlFor="donor">Doador</label>
                     <input
                         disabled={this.disabled}
                         type="text"
-                        name="birth_date"
-                        defaultValue={this.props.user?.birth_date?.split("T")[0].split('-').reverse().join('-') || '00-00-000'}
-                        id="birth_date"
+                        name="donor"
+                        defaultValue={this.props.organ.users_organs_donorTousers.name}
+                        id="donor"
                     />
                 </Grid>
                 <Grid item xs={6}>
-                    <label htmlFor="phone_number">Contato</label>
+                    <label htmlFor="institution">Instituição</label>
                     <input
                         disabled={this.disabled}
                         type="text"
-                        name="phone_number"
-                        defaultValue={this.props.user.phone_number}
-                        id="phone_number"
+                        name="institution"
+                        defaultValue={this.props.organ.users_organs_institutionTousers.name}
+                        id="institution"
                     />
                 </Grid>
-                <Grid item xs={6}>
-                    <label htmlFor="cpf">Documento</label>
-                    <input
-                        disabled={this.disabled}
-                        type="text"
-                        name="cpf"
-                        defaultValue={this.props.user.cpf}
-                        id="cpf"
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <label htmlFor="adress">Endereço</label>
-                    <input
-                        disabled={this.disabled}
-                        type="text"
-                        name="adress"
-                        defaultValue={this.props.user.adress}
-                        id="adress"
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <label htmlFor="city">Cidade</label>
-                    <input
-                        disabled={this.disabled}
-                        type="text"
-                        name="city"
-                        defaultValue={this.props.user.city}
-                        id="city"
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <label htmlFor="state">Estado</label>
-                    <input
-                        disabled={this.disabled}
-                        type="text"
-                        name="state"
-                        defaultValue={this.props.user.state}
-                        id="state"
-                    />
-                </Grid>
-            </Grid>
+              </Grid>
             </div>
             <button hidden={this.disabled} className="login-btn" type="submit">Salvar</button>
         </form>
@@ -151,9 +101,9 @@ class ModalUser extends Component {
 
         let deleteAction = (
             <>
-                <p> Deseja realmente deletar esse usuário? </p>
+                <p> Deseja realmente deletar esse orgão? </p>
                 <button className="" onClick={this.toggle}>Cancelar</button>
-                <button className="" onClick={() => this.props.action(this.props.user.id)}>Confirmar</button>
+                <button className="" onClick={() => this.props.action(this.props.organ.id)}>Confirmar</button>
             </>
         )
 
@@ -161,16 +111,16 @@ class ModalUser extends Component {
 
         if(label === 'Edit'){
             button = <IconButton onClick={this.toggle}><EditIcon /></IconButton>
-            title = 'Editar Usuário'
+            title = 'Editar Orgão'
             this.setDisabled(false)
             content = form
         } else if(label === 'Delete'){
             button = <IconButton onClick={this.toggle}><DeleteIcon /></IconButton>
-            title = 'Deletar Usuário'
+            title = 'Deletar Orgão'
             content = deleteAction
         } else {
             button = <IconButton onClick={this.toggle}><VisibilityIcon /></IconButton>
-            title = 'Visualizar Usuário'
+            title = 'Visualizar Orgão'
             this.setDisabled(true)
             content = form
         }
@@ -196,4 +146,4 @@ class ModalUser extends Component {
     }
 }
 
-export default ModalUser
+export default ModalOrgan

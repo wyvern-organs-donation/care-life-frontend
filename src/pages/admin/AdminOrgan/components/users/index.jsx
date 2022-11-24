@@ -1,36 +1,30 @@
 import React from 'react';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import ModalUser from '../Modal';
+import ModalOrgan from '../Modal';
 import './style.css';
-  
-function GetUsers(props) {
+
+function GetOrgans(props) {
     return (
         <table className='table'>
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Data</th>
                     <th>Tipo</th>
-                    <th>Contato</th>
+                    <th>Doador</th>
+                    <th>Instituição</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-            {props.users.map((user) => (
-                <tr className='table-body-row' key={user.id}>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.birth_date}</td>
-                    <td>{user.type}</td>
-                    <td>{user.phone_number}</td>
+            {props.organs.map((organ) => (
+                <tr className='table-body-row' key={organ.id}>
+                    <td>{organ.organ_types.name}</td>
+                    <td>{organ.users_organs_donorTousers.name}</td>
+                    <td>{organ.users_organs_institutionTousers.name}</td>
                     <td>
                         <ButtonGroup color="primary" aria-label="outlined primary button group">
-                            <ModalUser buttonLabel="View" user={user} action={props.updateUser} />
-                            <ModalUser buttonLabel="Edit" user={user} action={props.updateUser} />
-                            <ModalUser buttonLabel="Delete" user={user} action={props.userDelete}/>
+                            <ModalOrgan buttonLabel="View" organ={organ} action={props.updateOrgan} />
+                            <ModalOrgan buttonLabel="Edit" organ={organ} action={props.updateOrgan} />
+                            <ModalOrgan buttonLabel="Delete" organ={organ} action={props.deleteOrgan}/>
                         </ButtonGroup>
                     </td>
                 </tr>
@@ -39,5 +33,5 @@ function GetUsers(props) {
         </table>
     );
 }
-  
-export default GetUsers
+
+export default GetOrgans

@@ -3,66 +3,115 @@ import Header from '../components/Header';
 import Navbar from '../components/BlueNavbar';
 import Search from '../components/Search';
 import ButtonsLine from '../components/ButtonsLine';
-import GetUsers from './components/users';
+import GetOrgans from './components/users';
 import './style.css';
 import api from "../../../services/api";
 
-function AdminUser() {
-    const [users, setUser] = useState([]);
+function AdminOrgan() {
+    const [organs, setOrgan] = useState([]);
+    const [filters, setFilters] = useState({})
+    const filteredRows = filterRows(organs, filters)
+
+    function filterRows(rows, filters) {
+      if (filters == '') return rows
+
+      return rows.filter(row => {
+        return Object.keys(filters).every(accessor => {
+          const value = row[accessor]["name"]
+          const searchValue = filters[accessor]
+
+          if (typeof value === 'string' || value instanceof String) {
+            return value.toLowerCase().includes(searchValue.toLowerCase())
+          }
+
+          if (typeof value === 'boolean' || value instanceof Boolean) {
+            return (searchValue === 'true' && value) || (searchValue === 'false' && !value)
+          }
+
+          if (typeof value === 'number' || value instanceof Number) {
+            return value == searchValue
+          }
+
+          return false
+        })
+      })
+    }
+
+    const handleSearch = (value, accessor) => {
+      if (value) {
+        setFilters(prevFilters => ({
+          ...prevFilters,
+          [accessor]: value,
+        }))
+      } else {
+        setFilters(prevFilters => {
+          const updatedFilters = { ...prevFilters }
+          delete updatedFilters[accessor]
+
+          return updatedFilters
+        })
+      }
+    }
+
+    const columns = [
+      { accessor: 'organ_types', label: 'Tipo' },
+      { accessor: 'users_organs_donorTousers', label: 'Doador' },
+      { accessor: 'users_organs_institutionTousers', label: 'Instituição'},
+    ]
 
     useEffect(() => {
-        UsersGet()
+        OrgansGet()
     }, []);
 
-    const UsersGet = () => {
+    const OrgansGet = () => {
         api
-        .get("/user")
-        .then((response) => setUser(response.data))
+        .get("/organ")
+        .then((response) => setOrgan(response.data))
         .catch((err) => {
             console.error("ops! ocorreu um erro" + err);
         });
     }
 
-    const UpdateUser = (id, data) => {
+    const UpdateOrgan = (id, data) => {
         api
-        .put("/user/"+id, data, {
+        .put("/organ/"+id, data, {
             headers: {
               'Content-Type': 'application/json'
             }
           })
         .then(
             () => {
-                UsersGet();
+                OrgansGet();
             }
         ).catch((err) => {
             console.error("ops! ocorreu um erro " + err);
-        });  
+        });
     }
-    
-    const UserDelete = (id) => {
+
+    const OrganDelete = (id) => {
         api
-        .delete("/user/"+id)
+        .delete("/organ/"+id)
         .then(
             () => {
-                UsersGet();
+                OrgansGet();
             }
         ).catch((err) => {
             console.error("ops! ocorreu um erro " + err);
-        });  
+        });
     }
-    
+
     return (
         <div className='rowC'>
             <Navbar />
             <div className='admin-background'>
                 <Header />
-                <Search title="Órgãos" />
+                <Search title="Orgãos" handler={handleSearch} options={columns}/>
                 <ButtonsLine />
-                <GetUsers users={users} userDelete={UserDelete} updateUser={UpdateUser}/>
+                <GetOrgans organs={filteredRows} deleteOrgan={OrganDelete} updateOrgan={UpdateOrgan}/>
             </div>
-            
+
         </div>
     )
 }
 
-export default AdminUser;
+export default AdminOrgan;
