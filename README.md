@@ -37,7 +37,7 @@ Utilizamos o `npm install` para instalar todas as depedências utilizadas no pro
 ```
 
 
-E, por fim, usamos o `npm start` para iniciar o servidor em modo de desenvolvimento  no endereço:
+E, por fim, usamos o `npm run dev` para iniciar o servidor em modo de desenvolvimento  no endereço:
 ```
     npm run dev
 ```
