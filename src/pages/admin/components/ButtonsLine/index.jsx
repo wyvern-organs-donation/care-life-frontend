@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
   
-const Button = () => {
+const ButtonsLine = () => {
   return (
     <div className='buttons-line'>
         <button>Cadastrar</button>
@@ -10,4 +10,4 @@ const Button = () => {
   );
 }
   
-export default Button
+export default ButtonsLine;

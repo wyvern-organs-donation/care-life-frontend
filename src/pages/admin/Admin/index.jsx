@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Navbar from '../components/WhiteNavbar';
 import MainCard from './components/MainCard';
 import WhiteCard from './components/WhiteCard';
-import { Container } from 'react-bootstrap';
 import api from "../../../services/api";
 import './style.css';
 
@@ -69,7 +68,7 @@ function Admin() {
     return (
         <div className='rowC'>
             <Navbar />
-            <Container className='admin-background'>
+            <div className='admin-background'>
                 <Header />
                 <main className="admin-main">
                 <MainCard />
@@ -79,7 +78,7 @@ function Admin() {
                     <WhiteCard title="Receptores Cadastrados" imgSrc="/src/assets/admin/registered-receivers.svg"  count={receptor.length} />
                 </div>
                 </main>
-            </Container>
+            </div>
         </div>
     )
 }

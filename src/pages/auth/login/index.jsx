@@ -7,62 +7,64 @@ import InputsPass from "../components/inputs-pass";
 import FooterForm from "../components/footer_form";
 import RememberPass from "../components/remember_pass";
 import { useRef, useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom';
 import "../login/index.css";
 
-export default function Login() { 
+export default function Login() {
   const emailRef = useRef();
   const errRef = useRef();
   const [email, setEmail] = useState("");
   const [password, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
       const response = await api.post(
-        '/auth', 
+        '/auth',
         JSON.stringify({ email, password }),
         {
           headers: { "Content-Type": "application/json" },
         }
       );
       localStorage.setItem("token", response?.data?.token);
-      localStorage.setItem("user", response?.data?.user);
+      localStorage.setItem("user", JSON.stringify(response?.data?.user));
       setSuccess(true);
       //clear state and controlled inputs
       setPwd("");
-      window.location.href="/"
+      navigate('/');
     } catch (err) {
       console.log(err)
       if (!err?.response) {
-        setErrMsg("No Server Response");
+        setErrMsg("Sem resposta");
       } else if (err.response?.status === 400) {
-        setErrMsg("Missing Username or Password");
+        setErrMsg(err.response?.data.info.message);
       } else {
-        setErrMsg("Login Failed" + err.response?.message);
+        setErrMsg("Login falhou" + err.response?.message);
       }
       errRef.current.focus();
     }
   };
-  
+
   useEffect(() => {
     setErrMsg("");
   }, [email, password]);
-  
+
   return (
     <div className="container">
       <Header />
       <div className="Main">
         <Picture />
-        {success ? (
-            <section>
-              <h1>You are logged in!</h1>
+        {localStorage.getItem("user") ? (
+            <>
+              <h1>Você já está logado</h1>
               <br />
               <p>{/* <a href="#">Go to Home</a> */}</p>
-            </section>
+            </>
         ) : (
-            <section>
+            <>
               <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">
                 {errMsg}
               </p>
@@ -108,7 +110,7 @@ export default function Login() {
                 link="Cadastre-se"
                 />
             </form>
-          </section>)}
+          </>)}
       </div>
     </div>
   );

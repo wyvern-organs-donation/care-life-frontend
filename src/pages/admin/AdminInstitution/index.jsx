@@ -7,8 +7,8 @@ import GetUsers from './components/users';
 import './style.css';
 import api from "../../../services/api";
 
-function AdminUser() {
-    const [users, setUser] = useState([]);
+function AdminInstitution() {
+    const [users, setInstituicao] = useState([]);
     const [filters, setFilters] = useState({})
     const filteredRows = filterRows(users, filters)
 
@@ -21,7 +21,7 @@ function AdminUser() {
           if (accessor=="user_types") {
             value = row[accessor]["name"]
           }
-
+          
           const searchValue = filters[accessor]
 
           if (typeof value === 'string' || value instanceof String) {
@@ -69,10 +69,27 @@ function AdminUser() {
         UsersGet()
     }, []);
 
+    const InstituicaoGet = (id) => {
+        api
+        .get("/user/filter", { params: { user_type_id: id } })
+        .then((response) => setInstituicao(response.data))
+        .catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
+    }
+
     const UsersGet = () => {
         api
-        .get("/user")
-        .then((response) => setUser(response.data))
+        .get("/typeUser")
+        .then((response) => {
+            var typeid = 1;
+            response.data.forEach(type => {
+                if (type.name == 'Instituições') {
+                    typeid = type.id
+                    InstituicaoGet(typeid);
+                }
+            });}
+        )
         .catch((err) => {
             console.error("ops! ocorreu um erro" + err);
         });
@@ -111,7 +128,7 @@ function AdminUser() {
             <Navbar />
             <div className='admin-background'>
                 <Header />
-                <Search title="Usuários" handler={handleSearch} options={columns}/>
+                <Search title="Instituições" handler={handleSearch} options={columns}/>
                 <ButtonsLine />
                 <GetUsers users={filteredRows} userDelete={UserDelete} updateUser={UpdateUser}/>
             </div>
@@ -120,4 +137,4 @@ function AdminUser() {
     )
 }
 
-export default AdminUser;
+export default AdminInstitution;
