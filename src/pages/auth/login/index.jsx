@@ -5,7 +5,6 @@ import Picture from "../components/picture";
 import Inputs from "../components/inputs-text";
 import InputsPass from "../components/inputs-pass";
 import FooterForm from "../components/footer_form";
-import RememberPass from "../components/remember_pass";
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../login/index.css";
@@ -76,7 +75,7 @@ export default function Login() {
               <h2>Login</h2>
               <div className="inputs">
                 <Inputs
-                  class="email"
+                  nameClass="email"
                   htmlFor="email"
                   title="Email"
                   name="email"
@@ -89,7 +88,7 @@ export default function Login() {
                   placeholder="Digite seu email"
                 />
                 <InputsPass
-                  class="password"
+                  nameClass="password"
                   title="Senha"
                   type="password"
                   onChange={(e) => setPwd(e.target.value)}
@@ -98,18 +97,11 @@ export default function Login() {
                   placeholder="Digite sua senha"
                 />
               </div>
-              <RememberPass
-                class="forgot-password"
-                classLink="rememberLink"
-                forgot="Esqueceu a senha?"
-                classRemember="remember-password"
-                remember="Lembrar senha"
-              />
               <button className="auth-btn" type="submit">
                 ENTRAR
               </button>
               <FooterForm
-                class="registered"
+                nameClass="registered"
                 classFooter="link"
                 text="Ainda não tem conta?"
                 url="/register"
