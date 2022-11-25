@@ -1,18 +1,18 @@
-export default function InputsPass(props) {
+import { BiShowAlt, BiHide } from "react-icons/bi";
+
+export default function InputsPass({ nameClass, htmlFor, title, type, name, onChange, value, id , placeholder }) {
     return (
-        <div className={props.class}>
-            <label htmlFor={props.htmlFor}>{props.title}</label>
+        <div className={nameClass}>
+            <label htmlFor={htmlFor}>{title}</label>
             <input
-            type={props.type}
-            name={props.name}
-            ref={props.ref}
-            onChange={props.onChange}
-            // onChange={(e) => setEmail(e.target.value)}
-            value={props.value}
-            id={props.id}
-            placeholder={props.placeholder}
-            />    
-            <img src="src/assets/authenctication/eye off.svg" alt="" className="eye"/>
+            type={type}
+            name={name}
+            onChange={onChange}
+            value={value}
+            id={id}
+            placeholder={placeholder}
+            />
+            <BiShowAlt className="eye"/>
         </div>
     );
 };

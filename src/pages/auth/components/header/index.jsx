@@ -16,7 +16,7 @@ export default function Header() {
           </li>
           {user ? (
             <li className="list-itens">
-            {user.user_types.name == "Administrador" || user.user_types.name == "Instituição" ? (
+            {user.type_id == 4 || user.type_id == 3 ? (
               <Link to="/admin" className="links-header">Sua Conta</Link>
             ) : (
               <><Link to="/user" className="links-header">Sua Conta</Link></>
@@ -32,12 +32,6 @@ export default function Header() {
               </li>
             </>
           )}
-          <li className="list-itens">
-            <Link to="/porque-doar" className="links-header">Porque Doar</Link>
-          </li>
-          <li className="list-itens">
-            <Link to="/forum" className="links-header">Forúm</Link>
-          </li>
         </ul>
       </nav>
     </div>

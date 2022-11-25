@@ -43,7 +43,7 @@ function App() {
           <Route path='/admin'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.user_types.name == "Administrador"}
+              isAllowed={!!user && user.id == 4}
             >
               <Admin />
             </ProtectedRoute>
@@ -51,7 +51,7 @@ function App() {
           <Route path='/admin-user'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.user_types.name == "Administrador"}
+              isAllowed={!!user && user.id == 4}
             >
               <AdminUser />
             </ProtectedRoute>
@@ -59,7 +59,7 @@ function App() {
           <Route path='/admin-organ'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.user_types.name == "Administrador"}
+              isAllowed={!!user && user.id == 4}
             >
               <AdminOrgan />
             </ProtectedRoute>
@@ -67,7 +67,7 @@ function App() {
           <Route path='/admin-institution'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.user_types.name == "Administrador"}
+              isAllowed={!!user && user.id == 4}
             >
               <AdminInstitution />
             </ProtectedRoute>
@@ -75,14 +75,14 @@ function App() {
           <Route path='/admin-application'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.user_types.name == "Administrador"}
+              isAllowed={!!user && user.id == 4}
             >
               <AdminApplication />
             </ProtectedRoute>
           } />
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/confirm-register" element={<ConfirmRegister />}></Route>
+          <Route path="/confirm-register/" element={<ConfirmRegister />}></Route>
         </Routes>
       </BrowserRouter>
   )
