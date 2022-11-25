@@ -15,6 +15,10 @@
     display: inline-block;
   }
 
+  .navbari a img {
+    width: 3rem;
+    height: 3rem;
+  }
   .rowC {
     display: flex;
     flex-direction: row;

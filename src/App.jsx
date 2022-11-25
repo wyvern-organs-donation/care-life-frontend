@@ -3,7 +3,6 @@ import Admin from './pages/admin/Admin';
 import AdminUser from './pages/admin/AdminUser';
 import AdminOrgan from './pages/admin/AdminOrgan';
 import AdminInstitution from './pages/admin/AdminInstitution';
-import AdminApplication from './pages/admin/AdminApplication';
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register/user-register";
 import ConfirmRegister from "./pages/auth/register/confirm-register";
@@ -70,14 +69,6 @@ function App() {
               isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminInstitution />
-            </ProtectedRoute>
-          } />
-          <Route path='/admin-application'element={
-            <ProtectedRoute
-              redirectPath="/"
-              isAllowed={!!user && user.user_types.name == "Administrador"}
-            >
-              <AdminApplication />
             </ProtectedRoute>
           } />
           <Route path="/login" element={<Login />}></Route>

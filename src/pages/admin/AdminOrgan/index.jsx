@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from '../components/Header';
 import Navbar from '../components/BlueNavbar';
 import Search from '../components/Search';
-import ButtonsLine from '../components/ButtonsLine';
 import GetOrgans from './components/users';
 import './style.css';
 import api from "../../../services/api";
@@ -106,7 +105,6 @@ function AdminOrgan() {
             <div className='admin-background'>
                 <Header />
                 <Search title="Orgãos" handler={handleSearch} options={columns}/>
-                <ButtonsLine />
                 <GetOrgans organs={filteredRows} deleteOrgan={OrganDelete} updateOrgan={UpdateOrgan}/>
             </div>
 

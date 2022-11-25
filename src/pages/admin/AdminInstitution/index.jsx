@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from '../components/Header';
 import Navbar from '../components/BlueNavbar';
 import Search from '../components/Search';
-import ButtonsLine from '../components/ButtonsLine';
 import GetUsers from './components/users';
 import './style.css';
 import api from "../../../services/api";
@@ -129,7 +128,6 @@ function AdminInstitution() {
             <div className='admin-background'>
                 <Header />
                 <Search title="Instituições" handler={handleSearch} options={columns}/>
-                <ButtonsLine />
                 <GetUsers users={filteredRows} userDelete={UserDelete} updateUser={UpdateUser}/>
             </div>
 

@@ -1,7 +1,9 @@
 .search {
     width: 80%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     margin: 0 auto;
 }
 
@@ -10,7 +12,6 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.75rem;
     font-weight: 600;
-    margin-right: 5rem;
 }
 
 .search input {
@@ -18,5 +19,18 @@
     border: none;
     border-radius: 9px;
     padding: 1rem;
-    margin-right: 4rem;
+}
+
+.register-button {
+    background-color: transparent;
+    color: #778CA2;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    line-height: 2rem;
+}
+
+.register-button:hover {
+    color: #00978F;
 }
