@@ -27,6 +27,18 @@ export default function Register() {
 
   const handleClickButton = async (e) => {
     e.preventDefault();
+    var typeid = 0
+    try {
+      const response = await api.get("/typeUser")
+      response.data.forEach(type => {
+          if (type.name == 'Doador') {
+            console.log(type.id)
+            typeid = type.id
+          }
+      })
+    } catch(err) {
+        console.error("ops! ocorreu um erro" + err);
+    }
     try {
       const response = await api.post(
         '/user',
@@ -35,7 +47,7 @@ export default function Register() {
             name: user.name,
             email: user.email,
             password: user.password,
-            type_id: 2,
+            type_id: typeid,
             cpf: user.cpf,
             phone_number: user.phone_number,
             birth_date: user.birth_date,
@@ -80,10 +92,10 @@ export default function Register() {
               onChange={handleSubmitValues}
               type="email"
               id="email-register"
-              placeholder="Digite seu email"   
+              placeholder="Digite seu email"
             />
 
-            <Inputs 
+            <Inputs
               nameClass="cpf"
               htmlFor="cpf"
               name="cpf"
@@ -94,7 +106,7 @@ export default function Register() {
               placeholder="Digite o seu CPF"
             />
 
-            <Inputs 
+            <Inputs
               nameClass="date"
               htmlFor="date-user"
               name="birth_date"
@@ -134,13 +146,13 @@ export default function Register() {
               onChange={handleSubmitValues}
               type="password"
               id="password-register-repeat"
-              placeholder="Digite sua senha"        
+              placeholder="Digite sua senha"
             />
             <span className="error"></span>
 
           </div>
           <button type="submit" className="auth-btn">ENTRAR</button>
-          <FooterForm 
+          <FooterForm
             nameClass="registered"
             classFooter="link"
             text="Já tem conta?"
