@@ -3,7 +3,6 @@ import Admin from './pages/admin/Admin';
 import AdminUser from './pages/admin/AdminUser';
 import AdminOrgan from './pages/admin/AdminOrgan';
 import AdminInstitution from './pages/admin/AdminInstitution';
-import AdminApplication from './pages/admin/AdminApplication';
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register/user-register";
 import ConfirmRegister from "./pages/auth/register/confirm-register";
@@ -43,7 +42,7 @@ function App() {
           <Route path='/admin'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.id == 4}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <Admin />
             </ProtectedRoute>
@@ -51,7 +50,7 @@ function App() {
           <Route path='/admin-user'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.id == 4}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminUser />
             </ProtectedRoute>
@@ -59,7 +58,7 @@ function App() {
           <Route path='/admin-organ'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.id == 4}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminOrgan />
             </ProtectedRoute>
@@ -67,22 +66,14 @@ function App() {
           <Route path='/admin-institution'element={
             <ProtectedRoute
               redirectPath="/"
-              isAllowed={!!user && user.id == 4}
+              isAllowed={!!user && user.user_types.name == "Administrador"}
             >
               <AdminInstitution />
             </ProtectedRoute>
           } />
-          <Route path='/admin-application'element={
-            <ProtectedRoute
-              redirectPath="/"
-              isAllowed={!!user && user.id == 4}
-            >
-              <AdminApplication />
-            </ProtectedRoute>
-          } />
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/confirm-register/" element={<ConfirmRegister />}></Route>
+          <Route path="/confirm-register" element={<ConfirmRegister />}></Route>
         </Routes>
       </BrowserRouter>
   )

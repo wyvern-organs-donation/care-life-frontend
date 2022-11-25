@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import ReactTooltip from "react-tooltip";
 import './style.css'
+// import {ReactComponent as MenuCake} from '../../../../assets/admin/gg_menu-cake.svg';
 
 function Navbar() {
   const handleLogout = () => {
@@ -9,6 +10,7 @@ function Navbar() {
   };
   return (
       <nav className="navbar">
+        {/* <Link to="/"><MenuCake /></Link> */}
         <Link to="/"><img data-tip data-for="homeTip" src="/src/assets/admin/gg_menu-cake.svg" alt="menu" /></Link>
         <Link to="/admin"><img data-tip data-for="dashTip" src="/src/assets/admin/ci_dashboard.svg" alt="dashboard" /></Link>
         <Link to="/admin-user"><img data-tip data-for="userTip" src="/src/assets/admin/iconoir_profile-circled.svg" alt="usuarios" /></Link>

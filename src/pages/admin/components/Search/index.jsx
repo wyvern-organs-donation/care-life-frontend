@@ -16,7 +16,10 @@ const Search = ({title, handler, options}) => {
             )
           })}
         </select>
-        <input type="date" placeholder='dd/mm/yy'></input>
+        <input type="date" placeholder='dd/mm/yy' />
+        <div style={{width: '100%'}}>
+        <button className="register-button">Cadastrar</button>
+        </div>
     </div>
   );
 };
