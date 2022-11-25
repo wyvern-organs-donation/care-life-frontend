@@ -1,14 +1,18 @@
-export default function Inputs(props) {
+import React from "react";
+
+export default function Inputs({ nameClass, htmlFor, title, type, name, onChange, value, id , placeholder, register }) {
+
     return (
-        <div className={props.class}>
-            <label htmlFor={props.htmlFor}>{props.title}</label>
+        <div className={nameClass}>
+            <label htmlFor={htmlFor}>{title}</label>
             <input
-            type={props.type}
-            name={props.name}
-            onChange={props.onChange}
-            value={props.value}
-            id={props.id}
-            placeholder={props.placeholder}
+            type={type}
+            name={name}
+            onChange={onChange}
+            value={value}
+            id={id}
+            placeholder={placeholder}
+            register={register}
             />    
         </div>
     );

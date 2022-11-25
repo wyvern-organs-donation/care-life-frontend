@@ -1,18 +1,24 @@
 import React from "react";
+
 import Header from "../../components/header";
 import Picture from "../../components/picture";
 import Inputs from "../../components/inputs-text";
 import InputsPass from "../../components/inputs-pass"
 import FooterForm from "../../components/footer_form";
 import api from "../../../../services/api";
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../../login/index.css";
 
 export default function Register() {
 
   const [user, setUser] = useState();
 
-  const handleSubmit =  (value) => {
+  const navigate = useNavigate();
+
+  const handleSubmitValues = (value) => {
    setUser((prevValue) => ({
     ...prevValue,
     [value.target.name]: value.target.value,
@@ -21,23 +27,30 @@ export default function Register() {
 
   const handleClickButton = async (e) => {
     e.preventDefault();
-    await api.post(
-      '/user',
-      {
-        name: user.name,
-        email: user.email,
-        password: user.pass,
-        type_id: 2,
-        cpf: user.cpf,
-        phone_number: user.phone_number,
-        birth_date: user.birth_date,
-      }
-      ).then((res) => {
-        setUser("");
-        window.location.href="/confirm-register"
-        console.log(res);
-      });
-    console.log(user);
+    try {
+      const response = await api.post(
+        '/user',
+        JSON.stringify(
+          {
+            name: user.name,
+            email: user.email,
+            password: user.password,
+            type_id: 2,
+            cpf: user.cpf,
+            phone_number: user.phone_number,
+            birth_date: user.birth_date,
+          }
+        ),
+        {
+          headers: { "Content-Type": "application/json" },
+        });
+        localStorage.setItem("user", JSON.stringify(response?.data?.user));
+        console.log(response.data);
+        localStorage.setItem("userId", JSON.stringify(response?.data?.user.id));
+        navigate('/confirm-register');
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -45,88 +58,93 @@ export default function Register() {
       <Header />
       <div className="Main">
         <Picture />
-        <form className="formName">
+        <form className="formName" onSubmit={(handleClickButton)}>
           <h2>Cadastro</h2>
           <div className="inputs">
             <Inputs
-              class="nome"
+              nameClass="nome"
               htmlFor="nome"
               name="name"
               title="Nome completo"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               type="text"
               id="name-register"
-              placeholder="Digite seu nome completo"         
+              placeholder="Digite seu nome completo"
             />
+
             <Inputs
-              class="email"
+              nameClass="email"
               htmlFor="email"
               name="email"
               title="Email"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               type="email"
               id="email-register"
-              placeholder="Digite seu email"         
+              placeholder="Digite seu email"   
             />
 
             <Inputs 
-              class="cpf"
+              nameClass="cpf"
               htmlFor="cpf"
               name="cpf"
               title="Insira o seu CPF"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               type="text"
               id="cpf"
               placeholder="Digite o seu CPF"
             />
 
             <Inputs 
-              class="date"
+              nameClass="date"
               htmlFor="date-user"
               name="birth_date"
               title="Data de nascimento"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               type="date"
               id="date-user"
             />
+            <span className="error"></span>
 
             <Inputs
-              class="phone"
+              nameClass="phone"
               htmlFor="telefone"
               name="phone_number"
               title="Telefone"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               id="telefone"
               placeholder="(83) 22422-7432"
             />
 
              <InputsPass
-              class="password"
+              nameClass="password"
               htmlFor="password-register"
-              name="pass"
+              name="password"
               title="Senha"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               type="password"
               id="password-register"
-              placeholder="Digite sua senha"         
+              placeholder="Digite sua senha"
             />
+
             <InputsPass
-              class="password-repeat"
+              nameClass="password-repeat"
               htmlFor="password-register-repeat"
               name="repeatPass"
               title="Repetir senha"
-              onChange={handleSubmit}
+              onChange={handleSubmitValues}
               type="password"
               id="password-register-repeat"
-              placeholder="Digite sua senha"         
-            />  
+              placeholder="Digite sua senha"        
+            />
+            <span className="error"></span>
+
           </div>
-          <button onClick={handleClickButton} className="auth-btn">ENTRAR</button>
+          <button type="submit" className="auth-btn">ENTRAR</button>
           <FooterForm 
-            class="registered"
+            nameClass="registered"
             classFooter="link"
             text="Já tem conta?"
-            url="#"
+            url="/login"
             link="Realizar login"
             />
         </form>
