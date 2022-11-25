@@ -2,28 +2,26 @@ import React from "react";
 import Header from "../../components/header";
 import Picture from "../../components/picture";
 import Inputs from "../../components/inputs-text";
-import InputsPass from "../../components/inputs-pass"
+import InputsPass from "../../components/inputs-pass";
 import FooterForm from "../../components/footer_form";
 import api from "../../../../services/api";
 import { useState } from "react";
 import "../../login/index.css";
 
 export default function Register() {
-
   const [user, setUser] = useState();
 
-  const handleSubmit =  (value) => {
-   setUser((prevValue) => ({
-    ...prevValue,
-    [value.target.name]: value.target.value,
-   }))
+  const handleSubmit = (value) => {
+    setUser((prevValue) => ({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }));
   };
 
   const handleClickButton = async (e) => {
     e.preventDefault();
-    await api.post(
-      '/user',
-      {
+    await api
+      .post("/user", {
         name: user.name,
         email: user.email,
         password: user.pass,
@@ -31,14 +29,12 @@ export default function Register() {
         cpf: user.cpf,
         phone_number: user.phone_number,
         birth_date: user.birth_date,
-      }
-      ).then((res) => {
+      })
+      .then((res) => {
         setUser("");
-        window.location.href="/confirm-register"
-        console.log(res);
+        window.location.href = "/confirm-register";
       });
-    console.log(user);
-  }
+  };
 
   return (
     <div className="container">
@@ -56,7 +52,7 @@ export default function Register() {
               onChange={handleSubmit}
               type="text"
               id="name-register"
-              placeholder="Digite seu nome completo"         
+              placeholder="Digite seu nome completo"
             />
             <Inputs
               class="email"
@@ -66,10 +62,10 @@ export default function Register() {
               onChange={handleSubmit}
               type="email"
               id="email-register"
-              placeholder="Digite seu email"         
+              placeholder="Digite seu email"
             />
 
-            <Inputs 
+            <Inputs
               class="cpf"
               htmlFor="cpf"
               name="cpf"
@@ -80,7 +76,7 @@ export default function Register() {
               placeholder="Digite o seu CPF"
             />
 
-            <Inputs 
+            <Inputs
               class="date"
               htmlFor="date-user"
               name="birth_date"
@@ -100,7 +96,7 @@ export default function Register() {
               placeholder="(83) 22422-7432"
             />
 
-             <InputsPass
+            <InputsPass
               class="password"
               htmlFor="password-register"
               name="pass"
@@ -108,7 +104,7 @@ export default function Register() {
               onChange={handleSubmit}
               type="password"
               id="password-register"
-              placeholder="Digite sua senha"         
+              placeholder="Digite sua senha"
             />
             <InputsPass
               class="password-repeat"
@@ -118,17 +114,19 @@ export default function Register() {
               onChange={handleSubmit}
               type="password"
               id="password-register-repeat"
-              placeholder="Digite sua senha"         
-            />  
+              placeholder="Digite sua senha"
+            />
           </div>
-          <button onClick={handleClickButton} className="auth-btn">ENTRAR</button>
-          <FooterForm 
+          <button onClick={handleClickButton} className="auth-btn">
+            ENTRAR
+          </button>
+          <FooterForm
             class="registered"
             classFooter="link"
             text="Já tem conta?"
             url="#"
             link="Realizar login"
-            />
+          />
         </form>
       </div>
     </div>

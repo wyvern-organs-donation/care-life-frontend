@@ -8,14 +8,19 @@ export default function ConfirmRegister() {
     <div className="container">
       <Header />
       <div className="Main">
-      <Picture />
+        <Picture />
         <form className="formName">
           <h2>Complete seu cadastro</h2>
           <div className="text">
-            <p>Foi enviado um link de confirmação de registro, acesse-o para continuar!</p>
+            <p>
+              Foi enviado um link de confirmação de registro, acesse-o para
+              continuar!
+            </p>
           </div>
           <div className="thanks">
-            <h3>Agradecemos a iniciativa de cadastro. Doe orgãos, salve vidas!!</h3>
+            <h3>
+              Agradecemos a iniciativa de cadastro. Doe órgãos, salve vidas!!
+            </h3>
           </div>
         </form>
       </div>

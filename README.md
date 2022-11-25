@@ -1,13 +1,26 @@
+## Wyverns Squad
+
+- Ana Carolina
+- Carlos Cesar
+- Gabriel da Silva Sá
+- Gilmar Freire
+- Gilvânia Moreira
+- Gustavo Henrique
+- Rafaella Sampaio
+- Tiago Costa
+
 ## Configurando e inicializando o projeto
 
 Primeiramente deverá fazer o clone da aplicação em sua máquina:
 
 Através do https
+
 ```
     git clone https://github.com/wyvern-organs-donation/care-life-frontend.git
 ```
 
 Através do ssh
+
 ```
     git clone git@github.com:wyvern-organs-donation/care-life-frontend.git
 ```
@@ -15,11 +28,11 @@ Através do ssh
 Utilizamos o `npm install` para instalar todas as depedências utilizadas no projeto.
 
 ```
-    npm install 
+    npm install
 ```
 
+E, por fim, usamos o `npm start` para iniciar o servidor em modo de desenvolvimento no endereço:
 
-E, por fim, usamos o `npm start` para iniciar o servidor em modo de desenvolvimento  no endereço:
 ```
     npm run dev
 ```
