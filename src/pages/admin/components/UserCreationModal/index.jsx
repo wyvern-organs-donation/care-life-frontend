@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-const CreationModal = ({ isOpen, onClose, onSubmit }) => {
+const CreationModal = ({ isOpen, userTypes = [], onClose, onSubmit }) => {
   const submitForm = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -46,7 +46,15 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
             >
               <Grid item xs={12}>
                 <label htmlFor="type_id">Tipo</label>
-                <input type="text" name="type_id" id="type_id" />
+                <select name="type_id">
+                  {userTypes.map((organ) => {
+                    return (
+                      <option key={organ.id} value={organ.id}>
+                        {organ.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </Grid>
               <Grid item xs={6}>
                 <label htmlFor="name">Nome</label>

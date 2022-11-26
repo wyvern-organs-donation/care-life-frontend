@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import api from "../../../../../services/api";
 
 const style = {
   position: "absolute",
@@ -17,43 +16,19 @@ const style = {
   p: 4,
 };
 
-const CreationModal = ({ isOpen, onClose, onSubmit }) => {
-  const [organTypes, setOrganTypes] = useState([]);
-  const [institutions, setInstitutions] = useState([]);
-  const [donors, setDonors] = useState([]);
-
+const CreationModal = ({
+  isOpen,
+  organTypes = [],
+  donors = [],
+  institutions = [],
+  onClose,
+  onSubmit,
+}) => {
   const submitForm = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
     onSubmit(data);
   };
-
-  useEffect(() => {
-    api
-      .get("/user")
-      .then((response) => {
-        setDonors(
-          response.data.filter((user) => user.user_types.name === "Doador")
-        );
-        setInstitutions(
-          response.data.filter(
-            (user) => user.user_types.name === "Instituições"
-          )
-        );
-      })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-
-    api
-      .get("/typeOrgan/")
-      .then((response) => {
-        setOrganTypes(response.data);
-      })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-  }, []);
 
   return (
     <Modal
@@ -80,7 +55,11 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
                 <label htmlFor="type_id">Tipo</label>
                 <select name="type_id">
                   {organTypes.map((organ) => {
-                    return <option value={organ.id}>{organ.name}</option>;
+                    return (
+                      <option key={organ.id} value={organ.id}>
+                        {organ.name}
+                      </option>
+                    );
                   })}
                 </select>
               </Grid>
@@ -88,7 +67,11 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
                 <label htmlFor="donor_id">Doador</label>
                 <select name="donor_id">
                   {donors.map((donor) => {
-                    return <option value={donor.id}>{donor.name}</option>;
+                    return (
+                      <option key={donor.id} value={donor.id}>
+                        {donor.name}
+                      </option>
+                    );
                   })}
                 </select>
               </Grid>
@@ -97,7 +80,9 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
                 <select name="institution_id">
                   {institutions.map((institution) => {
                     return (
-                      <option value={institution.id}>{institution.name}</option>
+                      <option key={institution.id} value={institution.id}>
+                        {institution.name}
+                      </option>
                     );
                   })}
                 </select>

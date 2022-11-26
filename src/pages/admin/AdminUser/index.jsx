@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/BlueNavbar";
 import Search from "../components/Search";
-import GetUsers from "./components/users";
+import UserTable from "../components/UserTable";
 import CreationModal from "../components/UserCreationModal";
-import "./style.css";
 import api from "../../../services/api";
 
 function AdminUser() {
   const [users, setUser] = useState([]);
+  const [userTypes, setUserTypes] = useState([]);
   const [filters, setFilters] = useState({});
   const [isCreationModalOpen, setIsCreationModalOpen] = useState(false);
   const filteredRows = filterRows(users, filters);
@@ -71,6 +71,17 @@ function AdminUser() {
 
   useEffect(() => {
     UsersGet();
+  }, []);
+
+  useEffect(() => {
+    api
+      .get("/typeUser/")
+      .then((response) => {
+        setUserTypes(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
   }, []);
 
   const UsersGet = () => {
@@ -137,7 +148,7 @@ function AdminUser() {
             setIsCreationModalOpen(true);
           }}
         />
-        <GetUsers
+        <UserTable
           users={filteredRows}
           userDelete={UserDelete}
           updateUser={UpdateUser}
@@ -146,6 +157,7 @@ function AdminUser() {
 
       <CreationModal
         isOpen={isCreationModalOpen}
+        userTypes={userTypes}
         onClose={() => {
           setIsCreationModalOpen(false);
         }}

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/BlueNavbar";
 import Search from "../components/Search";
-import GetOrgans from "./components/users";
+import OrgansTable from "./components/Table";
 import CreationModal from "./components/CreationModal";
-import "./style.css";
 import api from "../../../services/api";
 
 function AdminOrgan() {
   const [organs, setOrgan] = useState([]);
+  const [organTypes, setOrganTypes] = useState([]);
+  const [institutions, setInstitutions] = useState([]);
+  const [donors, setDonors] = useState([]);
   const [filters, setFilters] = useState({});
   const [isCreationModalOpen, setIsCreationModalOpen] = useState(false);
   const filteredRows = filterRows(organs, filters);
@@ -65,6 +67,33 @@ function AdminOrgan() {
 
   useEffect(() => {
     OrgansGet();
+  }, []);
+
+  useEffect(() => {
+    api
+      .get("/user")
+      .then((response) => {
+        setDonors(
+          response.data.filter((user) => user.user_types.name === "Doador")
+        );
+        setInstitutions(
+          response.data.filter(
+            (user) => user.user_types.name === "Instituições"
+          )
+        );
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+
+    api
+      .get("/typeOrgan/")
+      .then((response) => {
+        setOrganTypes(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
   }, []);
 
   const OrgansGet = () => {
@@ -131,8 +160,11 @@ function AdminOrgan() {
             setIsCreationModalOpen(true);
           }}
         />
-        <GetOrgans
+        <OrgansTable
           organs={filteredRows}
+          organTypes={organTypes}
+          donors={donors}
+          institutions={institutions}
           deleteOrgan={OrganDelete}
           updateOrgan={UpdateOrgan}
         />
@@ -140,6 +172,9 @@ function AdminOrgan() {
 
       <CreationModal
         isOpen={isCreationModalOpen}
+        organTypes={organTypes}
+        donors={donors}
+        institutions={institutions}
         onClose={() => {
           setIsCreationModalOpen(false);
         }}
