@@ -8,9 +8,13 @@ const Search = ({ title, handler, options, onClickRegisterButton }) => {
       <h3>Painel de Controle - {title}</h3>
       <input
         type="text"
+        placeholder="Filtro"
         onChange={(event) => handler(event.target.value, selected)}
       ></input>
-      <select onChange={(event) => setSelected(event.target.value)}>
+      <select
+        className="admin-select-borderless"
+        onChange={(event) => setSelected(event.target.value)}
+      >
         {options.map((column, index) => {
           return (
             <option key={index} value={column.accessor}>

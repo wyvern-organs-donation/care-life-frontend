@@ -1,0 +1,21 @@
+.admin-form select {
+  background-color: transparent;
+  border: 1px solid #1168da;
+  border-radius: 9px;
+  padding: 1rem;
+}
+
+.admin-form input {
+  border: 1px solid #1168da !important;
+  border-radius: 9px !important;
+  min-width: 150px;
+}
+
+.admin-form button {
+  margin-top: 1rem;
+  background-color: #1168da;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 1rem 2rem;
+}

@@ -52,7 +52,7 @@ class ModalOrgan extends Component {
     let title = "";
 
     let form = (
-      <form onSubmit={this.submitForm} className="formName">
+      <form onSubmit={this.submitForm} className="formName admin-form">
         <div className="inputs">
           <Grid
             container
