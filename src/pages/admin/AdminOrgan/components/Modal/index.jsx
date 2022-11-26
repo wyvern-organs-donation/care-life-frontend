@@ -71,9 +71,9 @@ class ModalOrgan extends Component {
               <input
                 disabled={this.disabled}
                 type="text"
-                name="type"
+                name="type_id"
                 defaultValue={this.props.organ.organ_types.id}
-                id="type"
+                id="type_id"
               />
             </Grid>
             <Grid item xs={6}>
@@ -81,9 +81,9 @@ class ModalOrgan extends Component {
               <input
                 disabled={this.disabled}
                 type="text"
-                name="donor"
+                name="donor_id"
                 defaultValue={this.props.organ.users_organs_donorTousers.id}
-                id="donor"
+                id="donor_id"
               />
             </Grid>
             <Grid item xs={6}>
@@ -91,11 +91,11 @@ class ModalOrgan extends Component {
               <input
                 disabled={this.disabled}
                 type="text"
-                name="institution"
+                name="institution_id"
                 defaultValue={
                   this.props.organ.users_organs_institutionTousers.id
                 }
-                id="institution"
+                id="institution_id"
               />
             </Grid>
           </Grid>

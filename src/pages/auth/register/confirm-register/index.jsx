@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import "../../login/index.css";
 
 export default function ConfirmRegister() {
-
   const [user, setUser] = useState();
   const navigate = useNavigate();
 
@@ -17,27 +16,23 @@ export default function ConfirmRegister() {
   }, []);
 
   const getUsers = async () => {
-
     const userId = localStorage.getItem("userId");
-        
+
     try {
-      await api.get('/user')
-    .then((res) => { 
-      setUser(res.data);
-      res.data.map((e) => {
-        if (e.id == userId && e.status) {
-          navigate('/login');
-        }
-      })
-      console.log(res.data);
-    })
+      await api.get("/user").then((res) => {
+        setUser(res.data);
+        res.data.map((e) => {
+          if (e.id == userId && e.status) {
+            navigate("/login");
+          }
+        });
+      });
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
-  }
+  };
 
   return (
-    
     <div className="container">
       <Header />
       <div className="Main">
@@ -60,4 +55,3 @@ export default function ConfirmRegister() {
     </div>
   );
 }
-

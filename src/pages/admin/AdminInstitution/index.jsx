@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Navbar from "../components/BlueNavbar";
 import Search from "../components/Search";
 import GetUsers from "./components/users";
-import CreationModal from "./components/CreationModal";
+import CreationModal from "../components/UserCreationModal";
 import "./style.css";
 import api from "../../../services/api";
 
@@ -126,7 +126,19 @@ function AdminInstitution() {
   };
 
   const createUser = (data) => {
-    //pending
+    api
+      .post("/user/", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        UsersGet();
+        setIsCreationModalOpen(false);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro " + err);
+      });
   };
 
   return (

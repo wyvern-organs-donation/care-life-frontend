@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import api from "../../../../../services/api";
 
 const style = {
   position: "absolute",
@@ -17,11 +18,42 @@ const style = {
 };
 
 const CreationModal = ({ isOpen, onClose, onSubmit }) => {
+  const [organTypes, setOrganTypes] = useState([]);
+  const [institutions, setInstitutions] = useState([]);
+  const [donors, setDonors] = useState([]);
+
   const submitForm = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
     onSubmit(data);
   };
+
+  useEffect(() => {
+    api
+      .get("/user")
+      .then((response) => {
+        setDonors(
+          response.data.filter((user) => user.user_types.name === "Doador")
+        );
+        setInstitutions(
+          response.data.filter(
+            (user) => user.user_types.name === "Instituições"
+          )
+        );
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+
+    api
+      .get("/typeOrgan/")
+      .then((response) => {
+        setOrganTypes(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
 
   return (
     <Modal
@@ -44,17 +76,31 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
               rowSpacing={1}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              <Grid item xs={6}>
-                <label htmlFor="type">Tipo</label>
-                <input type="text" name="type_id" id="type_id" />
+              <Grid item xs={12}>
+                <label htmlFor="type_id">Tipo</label>
+                <select name="type_id">
+                  {organTypes.map((organ) => {
+                    return <option value={organ.id}>{organ.name}</option>;
+                  })}
+                </select>
               </Grid>
-              <Grid item xs={6}>
-                <label htmlFor="donor">Doador</label>
-                <input type="text" name="donor_id" id="donor_id" />
+              <Grid item xs={12}>
+                <label htmlFor="donor_id">Doador</label>
+                <select name="donor_id">
+                  {donors.map((donor) => {
+                    return <option value={donor.id}>{donor.name}</option>;
+                  })}
+                </select>
               </Grid>
-              <Grid item xs={6}>
-                <label htmlFor="institution">Instituição</label>
-                <input type="text" name="institution_id" id="institution_id" />
+              <Grid item xs={12}>
+                <label htmlFor="institution_id">Instituição</label>
+                <select name="institution_id">
+                  {institutions.map((institution) => {
+                    return (
+                      <option value={institution.id}>{institution.name}</option>
+                    );
+                  })}
+                </select>
               </Grid>
             </Grid>
           </div>
