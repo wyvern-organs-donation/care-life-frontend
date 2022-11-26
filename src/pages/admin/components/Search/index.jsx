@@ -26,7 +26,7 @@ const Search = ({ title, handler, options, onClickRegisterButton }) => {
       <input type="date" placeholder="dd/mm/yy" />
       <div style={{ width: "100%" }}>
         <button className="register-button" onClick={onClickRegisterButton}>
-          Cadastrar
+          + Cadastrar
         </button>
       </div>
     </div>
