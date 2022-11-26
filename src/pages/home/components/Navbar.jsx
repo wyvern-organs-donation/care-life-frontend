@@ -6,8 +6,11 @@ export function Navbar() {
   const user = JSON.parse(localStorage.getItem("user"))
     return(
         <div className="Navbar">
-            <span className="nav-logo">Care Life</span>
+            
+
             <div className="nav-items">
+              <span className="nav-logo">Care Life</span>
+              <div>
                 <Link to="/">Início</Link>
                 {user ? (
                   <>
@@ -24,6 +27,8 @@ export function Navbar() {
                   </>
                 )}
                 <Link to="/porque-doar">Porque Doar</Link>
+              </div>
+                
             </div>
         </div>
     )
