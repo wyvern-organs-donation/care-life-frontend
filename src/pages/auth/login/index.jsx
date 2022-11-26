@@ -1,12 +1,12 @@
 import React from "react";
 import api from "../../../services/api";
 import Header from "../components/header";
-import Picture from "../components/picture"
+import Picture from "../components/picture";
 import Inputs from "../components/inputs-text";
 import InputsPass from "../components/inputs-pass";
 import FooterForm from "../components/footer_form";
 import { useRef, useState, useEffect } from "react";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "../login/index.css";
 
 export default function Login() {
@@ -20,9 +20,9 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
+    try {
       const response = await api.post(
-        '/auth',
+        "/auth",
         JSON.stringify({ email, password }),
         {
           headers: { "Content-Type": "application/json" },
@@ -33,9 +33,9 @@ export default function Login() {
       setSuccess(true);
       //clear state and controlled inputs
       setPwd("");
-      navigate('/');
+      navigate("/");
     } catch (err) {
-      console.log(err)
+      console.error(err);
       if (!err?.response) {
         setErrMsg("Sem resposta");
       } else if (err.response?.status === 400) {
@@ -57,32 +57,36 @@ export default function Login() {
       <div className="Main">
         <Picture />
         {localStorage.getItem("user") ? (
-            <>
-              <h1>Você já está logado</h1>
-              <br />
-              <p>{/* <a href="#">Go to Home</a> */}</p>
-            </>
+          <>
+            <h1>Você já está logado</h1>
+            <br />
+            <p>{/* <a href="#">Go to Home</a> */}</p>
+          </>
         ) : (
-            <>
-              <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">
-                {errMsg}
-              </p>
+          <>
+            <p
+              ref={errRef}
+              className={errMsg ? "errmsg" : "offscreen"}
+              aria-live="assertive"
+            >
+              {errMsg}
+            </p>
             <form onSubmit={handleSubmit} className="formName">
               <h2>Login</h2>
               <div className="inputs">
                 <Inputs
-                    nameClass="email"
-                    htmlFor="email"
-                    title="Email"
-                    name="email"
-                    ref={emailRef}
-                    onChange={(e) => {
-                      setEmail(e.target.value)
-                    }}
-                    value={email}
-                    id="email-login"
-                    placeholder="Digite seu email"
-                  />
+                  nameClass="email"
+                  htmlFor="email"
+                  title="Email"
+                  name="email"
+                  ref={emailRef}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  value={email}
+                  id="email-login"
+                  placeholder="Digite seu email"
+                />
                 <InputsPass
                   nameClass="password"
                   title="Senha"
@@ -91,18 +95,21 @@ export default function Login() {
                   value={password}
                   id="password-login"
                   placeholder="Digite sua senha"
-                  />
+                />
               </div>
-              <button className="auth-btn" type="submit">ENTRAR</button>
+              <button className="auth-btn" type="submit">
+                ENTRAR
+              </button>
               <FooterForm
                 nameClass="registered"
                 classFooter="link"
                 text="Ainda não tem conta?"
                 url="/register"
                 link="Cadastre-se"
-                />
+              />
             </form>
-          </>)}
+          </>
+        )}
       </div>
     </div>
   );
