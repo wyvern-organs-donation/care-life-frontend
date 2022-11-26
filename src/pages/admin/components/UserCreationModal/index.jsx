@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import "./style.css";
 
 const style = {
   position: "absolute",
@@ -37,7 +38,7 @@ const CreationModal = ({ isOpen, userTypes = [], onClose, onSubmit }) => {
         <Typography id="modal-modal-title" variant="h6" component="h2">
           Criar Usuário
         </Typography>
-        <form onSubmit={submitForm} className="formName">
+        <form onSubmit={submitForm} className="formName admin-form">
           <div className="inputs">
             <Grid
               container

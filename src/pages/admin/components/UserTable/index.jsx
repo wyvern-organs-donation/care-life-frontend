@@ -24,7 +24,7 @@ function UserTable(props) {
             <td>{user.birth_date}</td>
             <td>{user.user_types.name}</td>
             <td>{user.phone_number}</td>
-            <td>
+            <td className="action-td">
               <ButtonGroup
                 color="primary"
                 aria-label="outlined primary button group"

@@ -20,7 +20,7 @@ function OrgansTable(props) {
             <td>{organ.organ_types.name}</td>
             <td>{organ.users_organs_donorTousers.name}</td>
             <td>{organ.users_organs_institutionTousers.name}</td>
-            <td>
+            <td className="action-td">
               <ButtonGroup
                 color="primary"
                 aria-label="outlined primary button group"

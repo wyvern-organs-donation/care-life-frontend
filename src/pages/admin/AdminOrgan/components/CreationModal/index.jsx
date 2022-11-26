@@ -44,7 +44,7 @@ const CreationModal = ({
         <Typography id="modal-modal-title" variant="h6" component="h2">
           Criar Órgão
         </Typography>
-        <form onSubmit={submitForm} className="formName">
+        <form onSubmit={submitForm} className="formName admin-form">
           <div className="inputs">
             <Grid
               container
