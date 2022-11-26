@@ -1,4 +1,4 @@
-import { BiShowAlt, BiHide } from "react-icons/bi";
+// import { BiShowAlt, BiHide } from "react-icons/bi";
 
 export default function InputsPass({ nameClass, htmlFor, title, type, name, onChange, value, id , placeholder }) {
     return (
