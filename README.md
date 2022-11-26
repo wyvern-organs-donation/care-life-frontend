@@ -72,12 +72,7 @@ Através do ssh
     npm install
 ```
 
-E, por fim, usamos o `npm start` para iniciar o servidor em modo de desenvolvimento no endereço:
-
-# <<<<<<< HEAD
-
-3. E, por fim, usamos o `npm run dev` para iniciar o servidor em modo de desenvolvimento no endereço:
-   > > > > > > > 3602f98a4ce9eecd8199137dac603fb41316657c
+3. E, por fim, usamos o `npm run dev` para iniciar o servidor em modo de desenvolvimento:
 
 ```
     npm run dev
