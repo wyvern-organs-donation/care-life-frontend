@@ -24,15 +24,17 @@
 .register-button {
   background-color: transparent;
   color: #778ca2;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
-  border: none;
+  border: 1px solid #778ca2;
+  border-radius: 9px;
   cursor: pointer;
-  line-height: 2rem;
+  padding: 1rem;
 }
 
 .register-button:hover {
-  color: #00978f;
+  color: #19355c;
+  border: 1px solid #19355c;
 }
 
 .admin-select-borderless {
