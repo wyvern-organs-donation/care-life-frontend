@@ -16,10 +16,6 @@ const User = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
-
   const handleSubmitValues = (value) => {
     setUser((prevValue) => ({
       ...prevValue,
@@ -54,6 +50,7 @@ const User = () => {
 
   const handleLogout = () => {
     localStorage.clear();
+    navigate("/");
   };
 
   return (
@@ -69,6 +66,7 @@ const User = () => {
               htmlFor="nome"
               name="name"
               title="Nome completo"
+              value={user.name}
               onChange={handleSubmitValues}
               type="text"
               id="name-register"
@@ -80,6 +78,7 @@ const User = () => {
               htmlFor="email"
               name="email"
               title="Email"
+              value={user.email}
               onChange={handleSubmitValues}
               type="email"
               id="email-register"
@@ -91,6 +90,7 @@ const User = () => {
               htmlFor="cpf"
               name="cpf"
               title="Insira o seu CPF"
+              value={user.cpf}
               onChange={handleSubmitValues}
               type="text"
               id="cpf"
@@ -102,8 +102,12 @@ const User = () => {
               htmlFor="date-user"
               name="birth_date"
               title="Data de nascimento"
+              value={
+                user.birth_date?.split("T")[0].split("-").reverse().join("-") ||
+                ""
+              }
               onChange={handleSubmitValues}
-              type="date"
+              type="text"
               id="date-user"
             />
             <span className="error"></span>
@@ -113,6 +117,7 @@ const User = () => {
               htmlFor="telefone"
               name="phone_number"
               title="Telefone"
+              value={user.phone_number}
               onChange={handleSubmitValues}
               id="telefone"
               placeholder="(83) 22422-7432"

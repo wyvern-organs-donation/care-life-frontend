@@ -163,11 +163,11 @@ class ModalUser extends Component {
     let deleteAction = (
       <>
         <p> Deseja realmente deletar esse usuário? </p>
-        <button className="" onClick={this.toggle}>
+        <button className="cancel-button" onClick={this.toggle}>
           Cancelar
         </button>
         <button
-          className=""
+          className="delete-button"
           onClick={() => this.props.action(this.props.user.id)}
         >
           Confirmar

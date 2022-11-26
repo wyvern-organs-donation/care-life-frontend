@@ -11,11 +11,22 @@
   min-width: 150px;
 }
 
-.admin-form button {
+.admin-form button,
+.delete-button {
   margin-top: 1rem;
   background-color: #1168da;
   color: white;
   border: none;
   border-radius: 9px;
   padding: 1rem 2rem;
+}
+
+.cancel-button {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #1168da;
+  border: none;
+  border-radius: 9px;
+  padding: 1rem 2rem;
+  margin-right: 2rem;
 }
