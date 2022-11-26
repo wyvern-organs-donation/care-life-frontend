@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/BlueNavbar";
 import Search from "../components/Search";
-import GetUsers from "./components/users";
-import CreationModal from "./components/CreationModal";
-import "./style.css";
+import UserTable from "../components/UserTable";
+import CreationModal from "../components/UserCreationModal";
 import api from "../../../services/api";
 
 function AdminUser() {
   const [users, setUser] = useState([]);
+  const [userTypes, setUserTypes] = useState([]);
   const [filters, setFilters] = useState({});
   const [isCreationModalOpen, setIsCreationModalOpen] = useState(false);
   const filteredRows = filterRows(users, filters);
@@ -73,6 +73,17 @@ function AdminUser() {
     UsersGet();
   }, []);
 
+  useEffect(() => {
+    api
+      .get("/typeUser/")
+      .then((response) => {
+        setUserTypes(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
   const UsersGet = () => {
     api
       .get("/user")
@@ -109,7 +120,19 @@ function AdminUser() {
   };
 
   const createUser = (data) => {
-    //pending
+    api
+      .post("/user/", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        UsersGet();
+        setIsCreationModalOpen(false);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro " + err);
+      });
   };
 
   return (
@@ -125,7 +148,7 @@ function AdminUser() {
             setIsCreationModalOpen(true);
           }}
         />
-        <GetUsers
+        <UserTable
           users={filteredRows}
           userDelete={UserDelete}
           updateUser={UpdateUser}
@@ -134,6 +157,7 @@ function AdminUser() {
 
       <CreationModal
         isOpen={isCreationModalOpen}
+        userTypes={userTypes}
         onClose={() => {
           setIsCreationModalOpen(false);
         }}

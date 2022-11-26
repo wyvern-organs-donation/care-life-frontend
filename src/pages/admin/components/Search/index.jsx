@@ -11,8 +11,12 @@ const Search = ({ title, handler, options, onClickRegisterButton }) => {
         onChange={(event) => handler(event.target.value, selected)}
       ></input>
       <select onChange={(event) => setSelected(event.target.value)}>
-        {options.map((column) => {
-          return <option value={column.accessor}>{column.label}</option>;
+        {options.map((column, index) => {
+          return (
+            <option key={index} value={column.accessor}>
+              {column.label}
+            </option>
+          );
         })}
       </select>
       <input type="date" placeholder="dd/mm/yy" />

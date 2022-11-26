@@ -16,7 +16,14 @@ const style = {
   p: 4,
 };
 
-const CreationModal = ({ isOpen, onClose, onSubmit }) => {
+const CreationModal = ({
+  isOpen,
+  organTypes = [],
+  donors = [],
+  institutions = [],
+  onClose,
+  onSubmit,
+}) => {
   const submitForm = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -44,17 +51,41 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
               rowSpacing={1}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              <Grid item xs={6}>
-                <label htmlFor="type">Tipo</label>
-                <input type="text" name="type_id" id="type_id" />
+              <Grid item xs={12}>
+                <label htmlFor="type_id">Tipo</label>
+                <select name="type_id">
+                  {organTypes.map((organ) => {
+                    return (
+                      <option key={organ.id} value={organ.id}>
+                        {organ.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </Grid>
-              <Grid item xs={6}>
-                <label htmlFor="donor">Doador</label>
-                <input type="text" name="donor_id" id="donor_id" />
+              <Grid item xs={12}>
+                <label htmlFor="donor_id">Doador</label>
+                <select name="donor_id">
+                  {donors.map((donor) => {
+                    return (
+                      <option key={donor.id} value={donor.id}>
+                        {donor.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </Grid>
-              <Grid item xs={6}>
-                <label htmlFor="institution">Instituição</label>
-                <input type="text" name="institution_id" id="institution_id" />
+              <Grid item xs={12}>
+                <label htmlFor="institution_id">Instituição</label>
+                <select name="institution_id">
+                  {institutions.map((institution) => {
+                    return (
+                      <option key={institution.id} value={institution.id}>
+                        {institution.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </Grid>
             </Grid>
           </div>

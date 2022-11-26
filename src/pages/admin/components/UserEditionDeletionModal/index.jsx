@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 
-class ModalOrgan extends Component {
+class ModalUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,62 +59,98 @@ class ModalOrgan extends Component {
             rowSpacing={1}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <input
                 hidden={true}
                 type="text"
                 name="id"
-                defaultValue={this.props.organ.id}
+                defaultValue={this.props.user.id}
                 id="id"
               />
-              <label htmlFor="type">Tipo</label>
-              <select
-                name="type_id"
+              <label htmlFor="name">Nome</label>
+              <input
                 disabled={this.disabled}
-                defaultValue={this.props.organ.organ_types.id}
-              >
-                {this.props.organTypes.map((organ) => {
-                  return (
-                    <option key={organ.id} value={organ.id}>
-                      {organ.name}
-                    </option>
-                  );
-                })}
-              </select>
+                type="text"
+                name="name"
+                defaultValue={this.props.user.name}
+                id="name"
+              />
             </Grid>
-            <Grid item xs={12}>
-              <label htmlFor="donor">Doador</label>
-              <select
-                name="donor_id"
+            <Grid item xs={6}>
+              <label htmlFor="email">Email</label>
+              <input
                 disabled={this.disabled}
-                defaultValue={this.props.organ.users_organs_donorTousers.id}
-              >
-                {this.props.donors.map((donor) => {
-                  return (
-                    <option key={donor.id} value={donor.id}>
-                      {donor.name}
-                    </option>
-                  );
-                })}
-              </select>
+                type="email"
+                name="email"
+                defaultValue={this.props.user.email}
+                id="email"
+              />
             </Grid>
-            <Grid item xs={12}>
-              <label htmlFor="institution_id">Instituição</label>
-              <select
-                name="institution_id"
+            <Grid item xs={6}>
+              <label htmlFor="birth_date">Data de Nascimento</label>
+              <input
                 disabled={this.disabled}
+                type="text"
+                name="birth_date"
                 defaultValue={
-                  this.props.organ.users_organs_institutionTousers.id
+                  this.props.user?.birth_date
+                    ?.split("T")[0]
+                    .split("-")
+                    .reverse()
+                    .join("-") || "00-00-000"
                 }
-              >
-                {this.props.institutions.map((institution) => {
-                  return (
-                    <option key={institution.id} value={institution.id}>
-                      {institution.name}
-                    </option>
-                  );
-                })}
-              </select>
+                id="birth_date"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="phone_number">Contato</label>
+              <input
+                disabled={this.disabled}
+                type="text"
+                name="phone_number"
+                defaultValue={this.props.user.phone_number}
+                id="phone_number"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="cpf">Documento</label>
+              <input
+                disabled={this.disabled}
+                type="text"
+                name="cpf"
+                defaultValue={this.props.user.cpf}
+                id="cpf"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="adress">Endereço</label>
+              <input
+                disabled={this.disabled}
+                type="text"
+                name="adress"
+                defaultValue={this.props.user.adress}
+                id="adress"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="city">Cidade</label>
+              <input
+                disabled={this.disabled}
+                type="text"
+                name="city"
+                defaultValue={this.props.user.city}
+                id="city"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <label htmlFor="state">Estado</label>
+              <input
+                disabled={this.disabled}
+                type="text"
+                name="state"
+                defaultValue={this.props.user.state}
+                id="state"
+              />
             </Grid>
           </Grid>
         </div>
@@ -126,13 +162,13 @@ class ModalOrgan extends Component {
 
     let deleteAction = (
       <>
-        <p> Deseja realmente deletar esse órgão? </p>
+        <p> Deseja realmente deletar esse usuário? </p>
         <button className="" onClick={this.toggle}>
           Cancelar
         </button>
         <button
           className=""
-          onClick={() => this.props.action(this.props.organ.id)}
+          onClick={() => this.props.action(this.props.user.id)}
         >
           Confirmar
         </button>
@@ -147,7 +183,7 @@ class ModalOrgan extends Component {
           <EditIcon />
         </IconButton>
       );
-      title = "Editar Órgão";
+      title = "Editar Usuário";
       this.setDisabled(false);
       content = form;
     } else if (label === "Delete") {
@@ -156,7 +192,7 @@ class ModalOrgan extends Component {
           <DeleteIcon />
         </IconButton>
       );
-      title = "Deletar Órgão";
+      title = "Deletar Usuário";
       content = deleteAction;
     } else {
       button = (
@@ -164,7 +200,7 @@ class ModalOrgan extends Component {
           <VisibilityIcon />
         </IconButton>
       );
-      title = "Visualizar Órgão";
+      title = "Visualizar Usuário";
       this.setDisabled(true);
       content = form;
     }
@@ -192,4 +228,4 @@ class ModalOrgan extends Component {
   }
 }
 
-export default ModalOrgan;
+export default ModalUser;

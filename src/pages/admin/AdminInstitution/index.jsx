@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/BlueNavbar";
 import Search from "../components/Search";
-import GetUsers from "./components/users";
-import CreationModal from "./components/CreationModal";
-import "./style.css";
+import UserTable from "../components/UserTable";
+import CreationModal from "../components/UserCreationModal";
 import api from "../../../services/api";
 
 function AdminInstitution() {
   const [users, setInstituicao] = useState([]);
+  const [userTypes, setUserTypes] = useState([]);
   const [filters, setFilters] = useState({});
   const [isCreationModalOpen, setIsCreationModalOpen] = useState(false);
   const filteredRows = filterRows(users, filters);
@@ -73,6 +73,17 @@ function AdminInstitution() {
     UsersGet();
   }, []);
 
+  useEffect(() => {
+    api
+      .get("/typeUser/")
+      .then((response) => {
+        setUserTypes(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
   const InstituicaoGet = (id) => {
     api
       .get("/user/filter", { params: { user_type_id: id } })
@@ -126,7 +137,19 @@ function AdminInstitution() {
   };
 
   const createUser = (data) => {
-    //pending
+    api
+      .post("/user/", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        UsersGet();
+        setIsCreationModalOpen(false);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro " + err);
+      });
   };
 
   return (
@@ -142,7 +165,7 @@ function AdminInstitution() {
             setIsCreationModalOpen(true);
           }}
         />
-        <GetUsers
+        <UserTable
           users={filteredRows}
           userDelete={UserDelete}
           updateUser={UpdateUser}
@@ -151,6 +174,7 @@ function AdminInstitution() {
 
       <CreationModal
         isOpen={isCreationModalOpen}
+        userTypes={userTypes}
         onClose={() => {
           setIsCreationModalOpen(false);
         }}

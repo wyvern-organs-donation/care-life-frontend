@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-const CreationModal = ({ isOpen, onClose, onSubmit }) => {
+const CreationModal = ({ isOpen, userTypes = [], onClose, onSubmit }) => {
   const submitForm = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -35,7 +35,7 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
           &times;
         </button>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-          Criar Órgão
+          Criar Usuário
         </Typography>
         <form onSubmit={submitForm} className="formName">
           <div className="inputs">
@@ -44,6 +44,18 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
               rowSpacing={1}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
+              <Grid item xs={12}>
+                <label htmlFor="type_id">Tipo</label>
+                <select name="type_id">
+                  {userTypes.map((organ) => {
+                    return (
+                      <option key={organ.id} value={organ.id}>
+                        {organ.name}
+                      </option>
+                    );
+                  })}
+                </select>
+              </Grid>
               <Grid item xs={6}>
                 <label htmlFor="name">Nome</label>
                 <input type="text" name="name" id="name" />
@@ -54,7 +66,7 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
               </Grid>
               <Grid item xs={6}>
                 <label htmlFor="birth_date">Data de Nascimento</label>
-                <input type="text" name="birth_date" id="birth_date" />
+                <input type="date" name="birth_date" id="birth_date" />
               </Grid>
               <Grid item xs={6}>
                 <label htmlFor="phone_number">Contato</label>
@@ -75,6 +87,14 @@ const CreationModal = ({ isOpen, onClose, onSubmit }) => {
               <Grid item xs={6}>
                 <label htmlFor="state">Estado</label>
                 <input type="text" name="state" id="state" />
+              </Grid>
+              <Grid item xs={6}>
+                <label htmlFor="zip">CEP</label>
+                <input type="text" name="zip" id="zip" />
+              </Grid>
+              <Grid item xs={6}>
+                <label htmlFor="password">Senha</label>
+                <input type="text" name="password" id="password" />
               </Grid>
             </Grid>
           </div>
