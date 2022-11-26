@@ -21,7 +21,10 @@ function UserTable(props) {
           <tr className="table-body-row" key={user.id}>
             <td>{user.name}</td>
             <td>{user.email}</td>
-            <td>{user.birth_date}</td>
+            <td>
+              {user?.birth_date?.split("T")[0].split("-").reverse().join("-") ||
+                ""}
+            </td>
             <td>{user.user_types.name}</td>
             <td>{user.phone_number}</td>
             <td className="action-td">
