@@ -1,30 +1,44 @@
-.Navbar{
-    padding-top: 2%;
-    padding-bottom: 5%;
-    height: 60px;
+.Navbar {
+    top: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 264px;
 }
 
-.Navbar > .nav-logo {
-    margin-left: 10%;
+.nav-logo {
     font-weight: 900;
-    font-size: 30px;
-    color: white;
+    font-size: 45px;
+    line-height: 68px;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
 }
 
-.Navbar > .nav-items > a{
-    color: white;
-    font-size: 18px;
+.Navbar>.nav-items {
+    height: 47px;
+    width: 1668px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+
+.Navbar>.nav-items>div>a {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 160%;
+    color: #FFFFFF;
     text-decoration: none;
     margin-left: 40px;
-    margin-right: 40px;
     position: relative;
     animation: all ease-in-out;
+    font-family: 'Inter', sans-serif;
 }
 
-.Navbar > .nav-items > a::after{
+.Navbar>.nav-items>a::after {
     content: " ";
     width: 0%;
     height: 5%;
@@ -34,11 +48,13 @@
     left: 0;
     transition: 0.3s ease-in-out;
 }
-.Navbar > .nav-items > a:hover::after{
+
+.Navbar>.nav-items>a:hover::after {
     width: 100%;
 }
-.Navbar > .nav-items > a:hover,
-.Navbar > .nav-items > a:focus{
+
+.Navbar>.nav-items>a:hover,
+.Navbar>.nav-items>a:focus {
     transition-duration: 0.2s;
     color: #01cfc9;
 }

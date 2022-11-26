@@ -1,45 +1,54 @@
-*{
-    margin: 0px;
-  }
-    
-  header{
-    padding-bottom: 15%;
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    background-image: url('../images/imagemMedico.png');
-    background-size: auto;
-    margin-bottom: 3%;
-  }
-    
-  #container{
-    margin-left: 10%;
-    color: white;
-    display: flex;
-    align-items: center;
-  }
-    
-  #message{
-    margin-top: 12%;
-    margin-bottom: 10%;
-    font-size: 1.3em;
-  }
-    
-  #text2{
-    font-weight: 900;
-    font-size: 4em;
-  }
-    
-  #text{
-    text-align: left;
-  }
-    
-  #btSingin{
-    color: white;
-    margin-top: 10%;
-    background-color: rgb(0, 190, 204);
-    font-size: 1.3em;
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background-image: url('../images/imagemMedico.svg');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 100%;
+  background-color: #1168DA;
+  z-index: 2;
+  width: 100%;
+  height: 1321px;
+}
+
+#container {
+  width: 1668px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#message {
+  margin-top: 12%;
+  margin-bottom: 10%;
+  font-size: 1.3em;
+}
+
+#text2 {
+  font-weight: 900;
+  font-size: 4em;
+}
+
+#text {
+  text-align: left;
+}
+
+#btSingin {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-top: 10%;
+  width: 290px;
+  height: 86px;
+  background: #03C1BB;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

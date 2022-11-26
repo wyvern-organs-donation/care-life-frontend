@@ -1,8 +1,4 @@
-*{
-    margin: 0px;
-}
-
-.word{
+.word {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     color: rgb(80, 80, 80);
     display: flex;
@@ -10,7 +6,16 @@
     align-items: center;
 }
 
-.textInfo{
+h2 {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    color: #464646;
+    margin-top: 64px;
+}
+
+.textInfo {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     color: #19355C;
     display: flex;
@@ -18,7 +23,7 @@
     align-items: center;
 }
 
-.textInfo > #tWD{
+.textInfo>#tWD {
     width: 30%;
     margin: 4%;
     font-weight: 900;
@@ -28,7 +33,7 @@
     text-align: left;
 }
 
-#logoParc{
+#logoParc {
     margin-left: 15%;
     margin-top: 3%;
     width: 80%;
@@ -37,12 +42,12 @@
     align-items: center;
 }
 
-.textInfo > #wD{
+.textInfo>#wD {
     font-weight: 900;
     font-size: 1.3em;
 }
 
-#beneficios{
+#beneficios {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     color: #19355C;
     display: flex;
@@ -50,18 +55,49 @@
     list-style: none;
     text-align: left;
     align-items: center;
+
 }
 
-#beneficios > .bnf > img{
-    margin: 3%;
-    margin-left: 16%;
-    padding: 2%;
-    padding-left: 17%;
-    padding-right: 17%;
-    background-color: rgb(226, 226, 226);
-    width: 30%;
-    height: 30%;
-    margin-bottom: 5%;
-    box-shadow: 3px 3px 6px black;
-    border-radius: 6px;
+#beneficios>.bnf {
+    width: 506px;
+    height: 396px;
+    left: 125px;
+    top: 2619px;
+    background: #FFF6F6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 40px;
+}
+
+#beneficios>.bnf>img {
+    width: 90px;
+    height: 90px;
+}
+
+.bnf ul  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bnf ul span {
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    color: #19355C;
+}
+
+.bnf ul li {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 160%;
+    color: #19355C;
+    font-family: 'Inter';
+    text-align: left;
 }

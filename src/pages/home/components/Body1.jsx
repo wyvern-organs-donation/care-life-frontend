@@ -3,7 +3,7 @@ import LogoParceiros1 from '../images/LogoParceiros1.png'
 import LogoParceiros2 from '../images/LogoParceiros2.png'
 import LogoParceiros3 from '../images/LogoParceiros3.png'
 import LogoParceiros4 from '../images/LogoParceiros4.png'
-import CheckBox from '../images/CheckBox.png'
+import CheckBox from '../images/Vetor Confirm.svg'
 
 export function Body1(){
     return(
@@ -33,12 +33,27 @@ export function Body1(){
                 <div id='beneficios'>
                     <div className='bnf'>
                             <img className='img' src={ CheckBox } />
+                            <ul>
+                                <span>Benefícios para quem doar!</span>
+                                <li>Auxílio Funeral</li>
+                                <li>Insenção de taxas e tarifas</li>
+                            </ul>
                     </div>
                     <div className='bnf'>
                             <img className='img' src={ CheckBox } />
+                            <ul>
+                                <span>Benefícios para quem doar!</span>
+                                <li>Auxílio Funeral</li>
+                                <li>Insenção de taxas e tarifas</li>
+                            </ul>
                     </div>
                     <div className='bnf'>
                             <img className='img' src={ CheckBox } />
+                            <ul>
+                                <span>Benefícios para quem doar!</span>
+                                <li>Auxílio Funeral</li>
+                                <li>Insenção de taxas e tarifas</li>
+                            </ul>
                     </div>
                 </div>
             </div>       

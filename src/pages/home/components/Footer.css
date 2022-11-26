@@ -1,14 +1,11 @@
-*{
-    margin: 0px;
-}
-
-.Footer > .container{
+.Footer>.container {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     background-color: #0094FF;
     padding: 2%;
+    height: 500px;
 }
 
-.Footer > .container{
+.Footer>.container {
     list-style: none;
     color: white;
     display: flex;
@@ -16,15 +13,25 @@
     align-items: center;
 }
 
-.Footer > .container > .CA{
-    font-weight: 500;
-    font-size: 1.3em;
+.Footer>.container>.CA {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px; 
+    color: #FFFFFF;
 }
 
-.Footer > #copyRight{
-    padding: 1%;
+.Footer>#copyRight {
+    padding: 16px;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    background-color: #1168DA;
-    color: white;
+    height: 110px;
+    background: #1168DA;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
